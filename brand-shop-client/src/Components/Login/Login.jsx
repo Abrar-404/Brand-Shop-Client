@@ -6,7 +6,7 @@ import { GiEnergyArrow } from 'react-icons/gi';
 import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
   const { loginUser, googleRegister } = useContext(AuthContext);
-  const [error, setError] = useState(null);
+  const [loginError, setLoginError] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -49,7 +49,7 @@ const Login = () => {
 
   const handleLoginUser = e => {
     e.preventDefault();
-    setError(null);
+    setLoginError(null);
 
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -104,12 +104,12 @@ const Login = () => {
             />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl  bg-slate-700 bg-opacity-60">
-            {error && (
+            {loginError && (
               <div
                 className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                 role="alert"
               >
-                {error}
+                {loginError}
               </div>
             )}
             <form onSubmit={handleLoginUser} className="card-body">
