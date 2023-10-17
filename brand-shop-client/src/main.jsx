@@ -12,11 +12,14 @@ import AddCar from './Components/Add Car/AddCar';
 import UpdateProduct from './Components/Update Product/UpdateProduct';
 import Cart from './Components/Cart/Cart';
 import AuthProvider from './Providers/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import ErrorElement from './Components/ErrorElement/ErrorElement';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: '/',
@@ -40,15 +43,27 @@ const router = createBrowserRouter([
       },
       {
         path: '/addcar',
-        element: <AddCar></AddCar>,
+        element: (
+          <PrivateRoute>
+            <AddCar></AddCar>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/updatecar',
-        element: <UpdateProduct></UpdateProduct>,
+        element: (
+          <PrivateRoute>
+            <UpdateProduct></UpdateProduct>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/cart',
-        element: <Cart></Cart>,
+        element: (
+          <PrivateRoute>
+            <Cart></Cart>
+          </PrivateRoute>
+        ),
       },
     ],
   },

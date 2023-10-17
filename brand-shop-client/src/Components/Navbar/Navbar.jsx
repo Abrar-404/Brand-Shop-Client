@@ -1,24 +1,49 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Navbar = () => {
+  const { user, userLogOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    userLogOut()
+      .then(result => {
+        navigate('/');
+        console.log(result.user);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
   const navLinks = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/login">Login</NavLink>
-      </li>
-      <li>
-        <NavLink to="/register">Register</NavLink>
-      </li>
-      <li>
-        <NavLink to="/addcar">Add Product</NavLink>
-      </li>
-      <li>
-        <NavLink to="/cart">My Cart</NavLink>
-      </li>
+      {user ? null : (
+        <>
+          <li className="">
+            <NavLink to="/login">Login</NavLink>
+          </li>
+          <li className="">
+            <NavLink to="/register">Register</NavLink>
+          </li>
+        </>
+      )}
+
+      {user && (
+        <>
+          <li>
+            <NavLink to="/cart">My Cart</NavLink>
+          </li>
+          <li>
+            <NavLink to="/addcar">Add Product</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -56,9 +81,39 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login">
-            <button className="btn btn-primary">Login</button>
-          </Link>
+          {user?.email ? (
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src={user?.photoURL} alt={user?.displayName} />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <button className="btn text-base mb-2 btn-sm btn-ghost">
+                    {user?.displayName}
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="btn btn-sm btn-primary"
+                    onClick={handleLogOut}
+                  >
+                    Log Out
+                  </button>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="btn btn-primary border-none text-xs text-white bg-[#5616C5]">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
