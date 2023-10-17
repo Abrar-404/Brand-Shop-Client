@@ -1,5 +1,96 @@
-import { Link } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
+import { GiEnergyArrow } from 'react-icons/gi';
+import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
+  const { loginUser, googleRegister } = useContext(AuthContext);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleGoogleSignIn = () => {
+    googleRegister()
+      .then(result => {
+        Swal.fire({
+          imageUrl: `https://i.ibb.co/H4HnLmL/yippee-yay.gif`,
+          title: 'WOOHOOO!!!! Welcome To The World!!!!',
+          width: 600,
+          padding: '3em',
+          color: '#7CFC00',
+          background: '#fff url()',
+          backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+        });
+        console.log(result.user);
+        navigate(location?.state ? location.state : '/');
+      })
+      .catch(error => {
+        console.error(error);
+        Swal.fire({
+          imageUrl: `https://i.ibb.co/ZLj6kP2/200w.gif`,
+          title: 'Email and Password did not match',
+          width: 600,
+          padding: '3em',
+          color: '#C70039 ',
+          background: '#fff url()',
+          backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+        });
+      });
+  };
+
+  const handleLoginUser = e => {
+    e.preventDefault();
+    setError(null);
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+
+    loginUser(email, password)
+      .then(result => {
+        console.log(result);
+        Swal.fire({
+          imageUrl: `https://i.ibb.co/H4HnLmL/yippee-yay.gif`,
+          title: 'WOOHOOO!!!! Welcome To The World!!!!',
+          width: 600,
+          padding: '3em',
+          color: '#7CFC00',
+          background: '#fff url()',
+          backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+        });
+        navigate(location?.state ? location.state : '/');
+      })
+      .catch(error => {
+        console.error(error);
+        Swal.fire({
+          imageUrl: `https://i.ibb.co/ZLj6kP2/200w.gif`,
+          title: 'Email and Password did not match',
+          width: 600,
+          padding: '3em',
+          color: '#C70039 ',
+          background: '#fff url()',
+          backdrop: `
+    rgba(0,0,123,0.4)
+    top
+    no-repeat
+  `,
+        });
+      });
+  };
+
   return (
     <div>
       <div className="hero  min-h-screen">
@@ -13,15 +104,15 @@ const Login = () => {
             />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl  bg-slate-700 bg-opacity-60">
-            {/* {error && (
+            {error && (
               <div
                 className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                 role="alert"
               >
                 {error}
               </div>
-            )} */}
-            <form className="card-body">
+            )}
+            <form onSubmit={handleLoginUser} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-white font-bold">Email</span>
@@ -68,22 +159,24 @@ const Login = () => {
                   Register
                 </Link>
               </p>
-              {/* <div
-                className="w-full justify-center items-center flex mx-auto"
+              <div
                 onClick={handleGoogleSignIn}
+                className="w-full justify-center items-center flex mx-auto"
               >
                 <div className="text-3xl -rotate-45 w-9 text-red-600">
                   <GiEnergyArrow></GiEnergyArrow>
                 </div>
-                <Button>
+
+                <div>
                   <button className="text-3xl w-full text-center flex mx-auto">
                     <FcGoogle></FcGoogle>
                   </button>
-                </Button>
+                </div>
+
                 <div className="text-3xl w-9 -rotate-[225deg] text-red-600">
                   <GiEnergyArrow></GiEnergyArrow>
                 </div>
-              </div> */}
+              </div>
             </form>
           </div>
         </div>
