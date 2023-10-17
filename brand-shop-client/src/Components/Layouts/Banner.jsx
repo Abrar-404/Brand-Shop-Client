@@ -7,18 +7,18 @@ const Banner = () => {
     backgroundImage: `url(${banner})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed',
+    backgroundAttachment: '',
   };
 
   return (
     <div>
-      <div style={bannerBg} className="w-full">
+      <div style={bannerBg} className="lg:w-full md:w-[90%] w-[100%] mx-auto">
         <div className="pt-44 mx-auto flex justify-end mr-16 mb-20">
           <div>
             <h1 className="text-4xl font-bold text-white ">
               Grab you <span className="text-red-600">DREAM</span>
             </h1>
-            <h1 className="text-white font-semibold text-3xl">
+            <h1 className="text-white font-semibold lg:text-3xl md:text-2xl text-xl">
               We are here to provide you
             </h1>
             <h1 className="text-white font-semibold text-3xl">Our best deal</h1>
@@ -27,7 +27,7 @@ const Banner = () => {
 
         <div className="ml-20 pb-10">
           <div>
-            <h1 className="text-white font-semibold mt-10 text-6xl">
+            <h1 className="text-white font-semibold mt-10 lg:text-6xl md:text-4xl text-2xl">
               Lamborghini{' '}
               <span className="text-red-600 font-bold text-3xl">Revuelto</span>
             </h1>

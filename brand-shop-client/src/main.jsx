@@ -10,6 +10,7 @@ import Banner from './Components/Layouts/Banner';
 import Footer from './Components/Footer/Footer';
 import AddCar from './Components/Add Car/AddCar';
 import UpdateProduct from './Components/Update Product/UpdateProduct';
+import Cart from './Components/Cart/Cart';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: '/updatecar',
         element: <UpdateProduct></UpdateProduct>,
+      },
+      {
+        path: '/cart',
+        element: <Cart></Cart>,
       },
     ],
   },

@@ -13,7 +13,7 @@ const AddCar = () => {
             <div className="md:flex mb-8">
               <div className="form-control md:w-1/2">
                 <label className="label">
-                  <span className="label-text font-bold">Car Name</span>
+                  <span className="label-text font-bold">Name</span>
                 </label>
                 <label className="input-group">
                   <input
@@ -25,7 +25,7 @@ const AddCar = () => {
                 </label>
               </div>
 
-              <div className="form-control md:w-1/2 ml-10">
+              <div className="form-control md:w-1/2 lg:w-1/2 w-full lg:ml-10 md:ml-10">
                 <label className="label">
                   <span className="label-text font-bold">Type</span>
                 </label>
@@ -33,7 +33,7 @@ const AddCar = () => {
                   <input
                     type="text"
                     name="quantity"
-                    placeholder="Ex: Toyota/Ford/BMW/Lamborghini"
+                    placeholder="Ex: Car/Bike/Truck"
                     className="input input-bordered input-primary w-full rounded-lg"
                   />
                 </label>
@@ -41,15 +41,29 @@ const AddCar = () => {
             </div>
 
             <div className="md:flex mb-8">
-              <div className="form-control w-full">
+              <div className="form-control md:w-1/2">
                 <label className="label">
                   <span className="label-text font-bold">Price</span>
                 </label>
                 <label className="input-group">
                   <input
-                    type="number"
+                    type="Number"
+                    placeholder="$Price"
                     name="price"
-                    placeholder="Product Price $"
+                    className="input input-bordered input-primary w-full rounded-lg"
+                  />
+                </label>
+              </div>
+
+              <div className="form-control md:w-1/2 lg:w-1/2 w-full lg:ml-10 md:ml-10">
+                <label className="label">
+                  <span className="label-text font-bold">Brand Name</span>
+                </label>
+                <label className="input-group">
+                  <input
+                    type="text"
+                    name="Brand Name"
+                    placeholder="Ex: Lamborghini Ruvelto"
                     className="input input-bordered input-primary w-full rounded-lg"
                   />
                 </label>
@@ -146,7 +160,7 @@ const AddCar = () => {
               </div>
             </div>
 
-            <button className="btn w-full mt-10 btn-primary">SUBMIT</button>
+            <button className="btn w-full mt-10 btn-primary">Add</button>
           </form>
         </div>
       </div>
