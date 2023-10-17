@@ -1,4 +1,28 @@
 const AddCar = () => {
+  const handleAddCar = e => {
+    e.preventDefault();
+
+    const formData = e.target;
+
+    const name = formData.name.value;
+    const type = formData.type.value;
+    const price = formData.price.value;
+    const brand = formData.brand.value;
+    const description = formData.description.value;
+    const image = formData.image.value;
+
+    const addCars = {
+      name,
+      type,
+      price,
+      brand,
+      description,
+      image,
+    };
+
+    console.log(addCars);
+  };
+
   return (
     <div>
       <div>
@@ -9,7 +33,7 @@ const AddCar = () => {
             </h1>
           </div>
 
-          <form>
+          <form onSubmit={handleAddCar}>
             <div className="md:flex mb-8">
               <div className="form-control md:w-1/2">
                 <label className="label">
@@ -32,7 +56,7 @@ const AddCar = () => {
                 <label className="input-group">
                   <input
                     type="text"
-                    name="quantity"
+                    name="type"
                     placeholder="Ex: Car/Bike/Truck"
                     className="input input-bordered input-primary w-full rounded-lg"
                   />
@@ -62,7 +86,7 @@ const AddCar = () => {
                 <label className="input-group">
                   <input
                     type="text"
-                    name="Brand Name"
+                    name="brand"
                     placeholder="Ex: Lamborghini Ruvelto"
                     className="input input-bordered input-primary w-full rounded-lg"
                   />
@@ -90,7 +114,7 @@ const AddCar = () => {
                 <label className="input-group">
                   <input
                     type="text"
-                    name="photo"
+                    name="image"
                     placeholder="Ex: https://i.ibb.co/4TNVZM2/360-F-551262235-q-Ny2-OAKOkb639g1ra-Bm-IKWHDlr-LQBWEH.jpg"
                     className="input input-bordered input-primary w-full rounded-lg"
                   />
