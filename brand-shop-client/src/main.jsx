@@ -8,6 +8,8 @@ import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import Banner from './Components/Layouts/Banner';
 import Footer from './Components/Footer/Footer';
+import AddCar from './Components/Add Car/AddCar';
+import UpdateProduct from './Components/Update Product/UpdateProduct';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: '/footer',
         element: <Footer></Footer>,
+      },
+      {
+        path: '/addcar',
+        element: <AddCar></AddCar>,
+      },
+      {
+        path: '/updatecar',
+        element: <UpdateProduct></UpdateProduct>,
       },
     ],
   },
