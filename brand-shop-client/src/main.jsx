@@ -26,7 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/newBrand'),
+        loader: () =>
+          fetch(
+            'https://brand-shop-server-il3ou5jut-abrar-404.vercel.app/newBrand'
+          ),
       },
       {
         path: '/login',
@@ -47,7 +50,10 @@ const router = createBrowserRouter([
       {
         path: '/addedproducts',
         element: <AddedProducts></AddedProducts>,
-        loader: () => fetch('http://localhost:5000/brands'),
+        loader: () =>
+          fetch(
+            'https://brand-shop-server-il3ou5jut-abrar-404.vercel.app/brands'
+          ),
       },
       {
         path: '/cardDetails/:brandName',
@@ -56,7 +62,10 @@ const router = createBrowserRouter([
             <CardLoader></CardLoader>
           </PrivateRoute>
         ),
-        loader: () => fetch('http://localhost:5000/allProducts'),
+        loader: () =>
+          fetch(
+            'https://brand-shop-server-il3ou5jut-abrar-404.vercel.app/allProducts'
+          ),
       },
       {
         path: '/addcar',

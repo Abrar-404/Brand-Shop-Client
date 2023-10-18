@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 const AddCar = () => {
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleSelectChange = e => {
+    setSelectedOption(e.target.value);
+  };
+
   const handleAddCar = e => {
     e.preventDefault();
 
@@ -18,13 +25,14 @@ const AddCar = () => {
       // type,
       price,
       // brand,
+      selectedOption,
       description,
       image,
     };
 
     console.log(addCars);
 
-    fetch('http://localhost:5000/brands', {
+    fetch('https://brand-shop-server-il3ou5jut-abrar-404.vercel.app/brands', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -95,14 +103,20 @@ const AddCar = () => {
                       Type
                     </span>
                   </label>
-                  <select className="select select-primary w-full">
-                    <option selected>Brand Name</option>
-                    <option>Toyota</option>
-                    <option>Ford</option>
-                    <option>BMW</option>
-                    <option>Mercedes-Benz</option>
-                    <option>Tesla</option>
-                    <option>Honda</option>
+                  <select
+                    onChange={handleSelectChange}
+                    value={selectedOption}
+                    className="select select-primary w-full"
+                  >
+                    <option value="" selected>
+                      Brand Name
+                    </option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Ford">Ford</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Honda">Honda</option>
                   </select>
                 </div>
               </div>
