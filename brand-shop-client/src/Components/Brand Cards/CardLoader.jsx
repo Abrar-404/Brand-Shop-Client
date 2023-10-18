@@ -5,16 +5,17 @@ const CardLoader = () => {
   const [bring, setBring] = useState([]);
   const bringAll = useLoaderData();
 
-  const { id } = useParams();
-  const idInt = parseInt(id);
-  console.log(idInt);
+  const { brandName } = useParams();
+  // const idInt = parseInt(id);
+  // console.log(idInt);
 
   useEffect(() => {
-    const bringData = bringAll?.find(bring => bring.id === idInt);
+    const bringData = bringAll?.filter(bring => bring?.brandName === brandName);
     setBring(bringData);
-  }, [idInt, bringAll]);
+  }, [brandName, bringAll]);
 
-  console.log(bring);
+  // console.log(bring);
+  
 
   return <CardDetails bring={bring}></CardDetails>;
 };

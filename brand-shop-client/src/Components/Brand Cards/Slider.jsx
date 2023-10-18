@@ -9,7 +9,7 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 const Slider = () => {
   return (
-    <div className="h-[440px] mt-20">
+    <div className="h-[440px] bg-transparent mt-20">
       <Swiper
         effect={'coverflow'}
         grabCursor={true}

@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 const AddCar = () => {
   const handleAddCar = e => {
     e.preventDefault();
@@ -5,22 +7,43 @@ const AddCar = () => {
     const formData = e.target;
 
     const name = formData.name.value;
-    const type = formData.type.value;
+    // const type = formData.type.value;
     const price = formData.price.value;
-    const brand = formData.brand.value;
+    // const brand = formData.brand.value;
     const description = formData.description.value;
     const image = formData.image.value;
 
     const addCars = {
       name,
-      type,
+      // type,
       price,
-      brand,
+      // brand,
       description,
       image,
     };
 
     console.log(addCars);
+
+    fetch('http://localhost:5000/brands', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(addCars),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Product Added Successfully',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
   };
 
   return (
@@ -56,7 +79,7 @@ const AddCar = () => {
                 <label className="input-group">
                   <input
                     type="number"
-                    name="Price"
+                    name="price"
                     placeholder="$Price"
                     className="input input-bordered input-primary w-full rounded-lg"
                   />

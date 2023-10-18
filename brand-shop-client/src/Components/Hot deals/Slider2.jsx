@@ -65,7 +65,7 @@ const Slider2 = () => {
             Dare to <span className="text-red-600 font-extrabold">SKIP</span>
           </div>
           <div className="text" data-swiper-parallax="-100">
-            <p className="text-4xl font-bold text-rose-700">LAMBORGHINI.COM</p>
+            <p className="text-4xl font-bold text-rose-700">AUTOMOTIO.COM</p>
           </div>
         </SwiperSlide>
       </Swiper>

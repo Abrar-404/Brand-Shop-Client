@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
 const BrandCards = ({ brand }) => {
-  const { brandName, image, id, status } = brand || {};
-
+  const { brandName, image, status } = brand || {};
+  // console.log(brand);
   return (
     <div>
-      <Link to={`/cardDetails/${id}`}>
+      <Link to={`/cardDetails/${brandName}`}>
         <div className="card card-compact bg-slate-700 bg-opacity-30 shadow-xl">
           <figure>
             <img

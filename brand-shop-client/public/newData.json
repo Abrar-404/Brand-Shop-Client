@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "status": "Available Right Now",
+    "brandName": "Toyota",
+    "brandName1": "Toyota Bent",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 2,
+    "status": "Available Right Now",
+    "brandName": "Toyota",
+    "brandName1": "Toyota bZ4X",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 3,
+    "status": "Available Right Now",
+    "brandName": "Toyota",
+    "brandName1": "Toyota Camry",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 4,
+    "status": "Available Right Now",
+    "brandName": "Toyota",
+    "brandName1": "Toyota Hilux",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 5,
+    "status": "Available Right Now",
+    "brandName": "Ford",
+    "brandName1": "Ford Ranger",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 6,
+    "status": "Available Right Now",
+    "brandName": "Ford",
+    "brandName1": "F-10 Raptor",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 7,
+    "status": "Available Right Now",
+    "brandName": "Ford",
+    "brandName1": "Ford Puma",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 8,
+    "status": "Available Right Now",
+    "brandName": "Ford",
+    "brandName1": "Ford GT",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 9,
+    "status": "Available Right Now",
+    "brandName": "Honda",
+    "brandName1": "Honda Type R v.1",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 10,
+    "status": "Available Right Now",
+    "brandName": "Honda",
+    "brandName1": "Honda CV Type-R",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 11,
+    "status": "Available Right Now",
+    "brandName": "Honda",
+    "brandName1": "Honda City V",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 12,
+    "status": "Available Right Now",
+    "brandName": "Honda",
+    "brandName1": "Honda Trivia",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 13,
+    "status": "Available Right Now",
+    "brandName": "BMW",
+    "brandName1": "BMW i8",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 14,
+    "status": "Available Right Now",
+    "brandName": "BMW",
+    "brandName1": "BMW m3 Coupe",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 15,
+    "status": "Available Right Now",
+    "brandName": "BMW",
+    "brandName1": "BMW Z4",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 16,
+    "status": "Available Right Now",
+    "brandName": "BMW",
+    "brandName1": "BMW i7",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 17,
+    "status": "Available Right Now",
+    "brandName": "Mercedes-Benz",
+    "brandName1": "Mercedes-Benz GT V8",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 18,
+    "status": "Available Right Now",
+    "brandName": "Mercedes-Benz",
+    "brandName1": "Mercedes-Benz GT",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 19,
+    "status": "Available Right Now",
+    "brandName": "Mercedes-Benz",
+    "brandName1": "Mercedes-Benz AMG",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 20,
+    "status": "Available Right Now",
+    "brandName": "Mercedes-Benz",
+    "brandName1": "Mercedes-Benz-CLE",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  }
+]
