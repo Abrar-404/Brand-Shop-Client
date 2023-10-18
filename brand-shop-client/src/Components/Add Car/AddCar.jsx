@@ -1,4 +1,18 @@
+import { useState } from 'react';
+import Select from 'react-select';
+
+const options = [
+  { value: 'Toyota', label: 'Toyota' },
+  { value: 'Ford', label: 'Ford' },
+  { value: 'BMW', label: 'BMW' },
+  { value: 'Mercedes-Benz', label: 'Mercedes-Benz' },
+  { value: 'Tesla', label: 'Tesla' },
+  { value: 'Honda', label: 'Honda' },
+];
+
 const AddCar = () => {
+  const [selectedOption, setSelectedOption] = useState(null);
+
   const handleAddCar = e => {
     e.preventDefault();
 
@@ -65,7 +79,7 @@ const AddCar = () => {
             </div>
 
             <div className="md:flex mb-8">
-              <div className="form-control md:w-1/2">
+              <div className="form-control w-full">
                 <label className="label">
                   <span className="label-text font-bold">Price</span>
                 </label>
@@ -78,21 +92,14 @@ const AddCar = () => {
                   />
                 </label>
               </div>
-
-              <div className="form-control md:w-1/2 lg:w-1/2 w-full lg:ml-10 md:ml-10">
-                <label className="label">
-                  <span className="label-text font-bold">Brand Name</span>
-                </label>
-                <label className="input-group">
-                  <input
-                    type="text"
-                    name="brand"
-                    placeholder="Ex: Lamborghini Ruvelto"
-                    className="input input-bordered input-primary w-full rounded-lg"
-                  />
-                </label>
-              </div>
             </div>
+
+            <Select
+              defaultValue={selectedOption}
+              placeholder="Brand Name"
+              onChange={setSelectedOption}
+              options={options}
+            />
 
             <div className="w-full">
               <label className="label">
