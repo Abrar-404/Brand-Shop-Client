@@ -14,6 +14,7 @@ import Cart from './Components/Cart/Cart';
 import AuthProvider from './Providers/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ErrorElement from './Components/ErrorElement/ErrorElement';
+import CardLoader from './Components/Brand Cards/CardLoader';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,15 @@ const router = createBrowserRouter([
       {
         path: '/footer',
         element: <Footer></Footer>,
+      },
+      {
+        path: '/cardDetails/:id',
+        element: (
+          <PrivateRoute>
+            <CardLoader></CardLoader>
+          </PrivateRoute>
+        ),
+        loader: () => fetch('/data.json'),
       },
       {
         path: '/addcar',
