@@ -20,15 +20,15 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <li>
+      <li className="text-red-600">
         <NavLink to="/">Home</NavLink>
       </li>
       {user ? null : (
         <>
-          <li className="">
+          <li className="text-red-600">
             <NavLink to="/login">Login</NavLink>
           </li>
-          <li className="">
+          <li className="text-red-600">
             <NavLink to="/register">Register</NavLink>
           </li>
         </>
@@ -36,10 +36,10 @@ const Navbar = () => {
 
       {user && (
         <>
-          <li>
+          <li className="text-red-600">
             <NavLink to="/cart">My Cart</NavLink>
           </li>
-          <li>
+          <li className="text-red-600">
             <NavLink to="/addcar">Add Product</NavLink>
           </li>
         </>
@@ -49,7 +49,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-transparent">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

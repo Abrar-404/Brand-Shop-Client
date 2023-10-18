@@ -1,18 +1,4 @@
-import { useState } from 'react';
-import Select from 'react-select';
-
-const options = [
-  { value: 'Toyota', label: 'Toyota' },
-  { value: 'Ford', label: 'Ford' },
-  { value: 'BMW', label: 'BMW' },
-  { value: 'Mercedes-Benz', label: 'Mercedes-Benz' },
-  { value: 'Tesla', label: 'Tesla' },
-  { value: 'Honda', label: 'Honda' },
-];
-
 const AddCar = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
-
   const handleAddCar = e => {
     e.preventDefault();
 
@@ -42,7 +28,7 @@ const AddCar = () => {
       <div>
         <div className="p-24">
           <div className="mb-10">
-            <h1 className="text-4xl flex justify-center font-extrabold">
+            <h1 className="text-4xl text-white flex justify-center font-extrabold">
               GRAB YOUR DREAM CAR
             </h1>
           </div>
@@ -51,7 +37,7 @@ const AddCar = () => {
             <div className="md:flex mb-8">
               <div className="form-control md:w-1/2">
                 <label className="label">
-                  <span className="label-text font-bold">Name</span>
+                  <span className="label-text text-white font-bold">Name</span>
                 </label>
                 <label className="input-group">
                   <input
@@ -65,45 +51,45 @@ const AddCar = () => {
 
               <div className="form-control md:w-1/2 lg:w-1/2 w-full lg:ml-10 md:ml-10">
                 <label className="label">
-                  <span className="label-text font-bold">Type</span>
+                  <span className="label-text text-white font-bold">Price</span>
                 </label>
                 <label className="input-group">
                   <input
-                    type="text"
-                    name="type"
-                    placeholder="Ex: Car/Bike/Truck"
-                    className="input input-bordered input-primary w-full rounded-lg"
-                  />
-                </label>
-              </div>
-            </div>
-
-            <div className="md:flex mb-8">
-              <div className="form-control w-full">
-                <label className="label">
-                  <span className="label-text font-bold">Price</span>
-                </label>
-                <label className="input-group">
-                  <input
-                    type="Number"
+                    type="number"
+                    name="Price"
                     placeholder="$Price"
-                    name="price"
                     className="input input-bordered input-primary w-full rounded-lg"
                   />
                 </label>
               </div>
             </div>
 
-            <Select
-              defaultValue={selectedOption}
-              placeholder="Brand Name"
-              onChange={setSelectedOption}
-              options={options}
-            />
+            <div>
+              <div className="flex justify-between gap-6">
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text text-white  font-bold">
+                      Type
+                    </span>
+                  </label>
+                  <select className="select select-primary w-full">
+                    <option selected>Brand Name</option>
+                    <option>Toyota</option>
+                    <option>Ford</option>
+                    <option>BMW</option>
+                    <option>Mercedes-Benz</option>
+                    <option>Tesla</option>
+                    <option>Honda</option>
+                  </select>
+                </div>
+              </div>
+            </div>
 
             <div className="w-full">
               <label className="label">
-                <span className="label-text font-bold">Short Description</span>
+                <span className="label-text text-white font-bold">
+                  Short Description
+                </span>
               </label>
               <textarea
                 className="textarea w-full textarea-primary"
@@ -116,7 +102,7 @@ const AddCar = () => {
             <div className="mb-8">
               <div className="form-control w-full">
                 <label className="label">
-                  <span className="label-text font-bold">Image</span>
+                  <span className="label-text text-white font-bold">Image</span>
                 </label>
                 <label className="input-group">
                   <input
@@ -130,7 +116,10 @@ const AddCar = () => {
             </div>
 
             {/* Ratings */}
-            <div className="mx-auto flex justify-center mt-10">
+            <h1 className="mx-auto text-white text-2xl font-bold justify-center flex">
+              Ratings
+            </h1>
+            <div className="mx-auto flex justify-center">
               <div className="rating rating-lg rating-half">
                 <input
                   type="radio"
