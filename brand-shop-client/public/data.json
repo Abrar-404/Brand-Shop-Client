@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "brandName": "Toyota",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "price": "$25000",
+    "description": "Reliable and efficient family cars."
+  },
+  {
+    "id": 2,
+    "brandName": "Ford",
+    "image": "https://i.ibb.co/PZNXNmw/suv-img-bronco-sport.jpg",
+    "price": "$28000",
+    "description": "American-made vehicles known for their power."
+  },
+  {
+    "id": 3,
+    "brandName": "Honda",
+    "image": "https://i.ibb.co/9vLMZWg/New-Honda-Civic-Type-R.jpg",
+    "price": "$22000",
+    "description": "Quality cars with great fuel efficiency."
+  },
+  {
+    "id": 4,
+    "brandName": "BMW",
+    "image": "https://i.ibb.co/VqCNVg7/IEIGHT-MAIN-i.jpg",
+    "price": "$50000",
+    "description": "Luxury and performance in one package."
+  },
+  {
+    "id": 5,
+    "brandName": "Mercedes-Benz",
+    "image": "https://i.ibb.co/j5S4Dy7/19c1037-004-1-1578423453.jpg",
+    "price": "$27000",
+    "description": "Diverse range of cars and trucks."
+  },
+  {
+    "id": 6,
+    "brandName": "Lamborghini",
+    "image": "https://i.ibb.co/7pgnNjZ/gate-models-og-01.webp",
+    "price": "$150000",
+    "description": "Innovative and stylish vehicle options."
+  }
+]
