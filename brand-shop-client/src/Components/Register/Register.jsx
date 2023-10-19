@@ -47,8 +47,7 @@ const Register = () => {
         width: 600,
         padding: '3em',
         color: '#C70039 ',
-        background:
-          '#fff url(https://i.ibb.co/nfmHX3X/depositphotos-182476906-stock-illustration-holographic-vector-backgrounds.webp)',
+        background: '#fff url()',
         backdrop: `
     rgba(0,0,123,0.4)
     top
@@ -65,8 +64,7 @@ const Register = () => {
         width: 600,
         padding: '3em',
         color: '#C70039 ',
-        background:
-          '#fff url(https://i.ibb.co/nfmHX3X/depositphotos-182476906-stock-illustration-holographic-vector-backgrounds.webp)',
+        background: '#fff url()',
         backdrop: `
     rgba(0,0,123,0.4)
     top
@@ -83,8 +81,7 @@ const Register = () => {
         width: 600,
         padding: '3em',
         color: '#C70039 ',
-        background:
-          '#fff url(https://i.ibb.co/nfmHX3X/depositphotos-182476906-stock-illustration-holographic-vector-backgrounds.webp)',
+        background: '#fff url()',
         backdrop: `
     rgba(0,0,123,0.4)
     top
