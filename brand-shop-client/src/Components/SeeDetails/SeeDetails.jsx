@@ -14,12 +14,15 @@ const SeeDetails = ({ bring }) => {
           <div className="card-body">
             <h2 className="card-title text-white">
               Brand Name:
-              <div className="badge badge-secondary">{bring?.brandName1}</div>
+              <div className="badge badge-secondary">{bring?.brandName}</div>
             </h2>
             <h2 className="text-base text-white">
               Status: <span className="font-bold">{}</span>
             </h2>
           </div>
+          <Link to="/cart">
+            <button className="btn btn-primary">Add To Cart</button>
+          </Link>
         </div>
       </Link>
     </div>

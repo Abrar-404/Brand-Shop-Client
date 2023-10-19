@@ -108,12 +108,14 @@ const SingleCardDetail = ({ brand }) => {
               </Link>
             </div>
           </div>
-          <div className="flex justify-center mt-2">
+          <div className="flex justify-evenly mt-2">
             <Link to={`/seedetails/:bandName1`}>
               <button className="btn btn-primary">
                 View Details <FaEye></FaEye>
               </button>
             </Link>
+
+           
           </div>
         </div>
       </div>

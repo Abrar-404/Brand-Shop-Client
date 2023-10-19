@@ -16,11 +16,6 @@ const AddedCards = ({ userbrands }) => {
           <p className=" text-white font-medium">
             Brand Name: {selectedOptionNew}
           </p>
-          <div className="card-actions justify-center mt-5">
-            <Link to="/cart">
-              <button className="btn btn-primary">Add To Cart</button>
-            </Link>
-          </div>
         </div>
       </div>
     </div>

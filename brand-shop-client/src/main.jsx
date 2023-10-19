@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         element: <Footer></Footer>,
       },
       {
-        path: '/seedetails/:brandName1',
+        path: '/seedetails/:brandName',
         element: (
           <PrivateRoute>
             <SeeDetails></SeeDetails>

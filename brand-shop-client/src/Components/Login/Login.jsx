@@ -97,11 +97,6 @@ const Login = () => {
         <div className="hero-content  flex-col lg:flex-row-reverse">
           <div className="text-center items-center lg:text-left">
             <h1 className="text-5xl w-full text-white font-bold">Login now!</h1>
-            <img
-              className="w-[200px] h-[180px] mt-10 rounded-full"
-              src="https://i.ibb.co/279NXhY/daniel-tolmachov-bluefire02.gif"
-              alt=""
-            />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl  bg-slate-700 bg-opacity-60">
             {loginError && (

@@ -121,13 +121,8 @@ const Register = () => {
     <div>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl text-white font-bold">Register!</h1>
-            <img
-              className="w-[200px] h-[190px] mt-10 rounded-full"
-              src="https://i.ibb.co/9h9vZ2q/rsc2020-elpradiant2020.gif"
-              alt=""
-            />
+          <div className="text-center w-full lg:text-left">
+            <h1 className="text-5xl text-white font-bold">Register Now!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-700 bg-opacity-60">
             <form onSubmit={handleRegisterUser} className="card-body">
