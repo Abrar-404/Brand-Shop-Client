@@ -16,6 +16,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ErrorElement from './Components/ErrorElement/ErrorElement';
 import CardLoader from './Components/Brand Cards/CardLoader';
 import AddedProducts from './Components/Added Products/AddedProducts';
+import SeeDetails from './Components/SeeDetails/SeeDetails';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () =>
           fetch(
-            'https://brand-shop-server-cijb9bvgw-abrar-404.vercel.app/newBrand'
+            'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/newBrand'
           ),
       },
       {
@@ -48,11 +49,23 @@ const router = createBrowserRouter([
         element: <Footer></Footer>,
       },
       {
+        path: '/seedetails/:brandName1',
+        element: (
+          <PrivateRoute>
+            <SeeDetails></SeeDetails>
+          </PrivateRoute>
+        ),
+        loader: () =>
+          fetch(
+            'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/allProducts'
+          ),
+      },
+      {
         path: '/addedproducts',
         element: <AddedProducts></AddedProducts>,
         loader: () =>
           fetch(
-            'https://brand-shop-server-cijb9bvgw-abrar-404.vercel.app/brands'
+            'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/brands'
           ),
       },
       {
@@ -64,7 +77,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            'https://brand-shop-server-cijb9bvgw-abrar-404.vercel.app/allProducts'
+            'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/allProducts'
           ),
       },
       {

@@ -1,15 +1,75 @@
+import { useState } from 'react';
+import Swal from 'sweetalert2';
+
 const UpdateProduct = () => {
+  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOptionNew, setSelectedOptionNew] = useState('');
+
+  const handleSelectChange = e => {
+    setSelectedOption(e.target.value);
+  };
+
+  const handleSelectNewChange = e => {
+    setSelectedOptionNew(e.target.value);
+  };
+
+  const handleAddCar = e => {
+    e.preventDefault();
+
+    const formData = e.target;
+
+    const name = formData.name.value;
+    const price = formData.price.value;
+    const description = formData.description.value;
+    const image = formData.image.value;
+
+    const addCars = {
+      name,
+      price,
+      selectedOption,
+      selectedOptionNew,
+      description,
+      image,
+    };
+
+    console.log(addCars);
+
+    fetch(
+      'https://brand-shop-server-cijb9bvgw-abrar-404.vercel.app/userBrands',
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(addCars),
+      }
+    )
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Product Added Successfully',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
+
   return (
     <div>
       <div>
         <div className="p-24">
           <div className="mb-10">
             <h1 className="text-4xl text-white flex justify-center font-extrabold">
-              Update Your Product
+              Update Your Car
             </h1>
           </div>
 
-          <form>
+          <form onSubmit={handleAddCar}>
             <div className="md:flex mb-8">
               <div className="form-control md:w-1/2">
                 <label className="label">
@@ -32,7 +92,7 @@ const UpdateProduct = () => {
                 <label className="input-group">
                   <input
                     type="number"
-                    name="Price"
+                    name="price"
                     placeholder="$Price"
                     className="input input-bordered input-primary w-full rounded-lg"
                   />
@@ -48,14 +108,41 @@ const UpdateProduct = () => {
                       Type
                     </span>
                   </label>
-                  <select className="select select-primary w-full">
-                    <option selected>Brand Name</option>
-                    <option>Toyota</option>
-                    <option>Ford</option>
-                    <option>BMW</option>
-                    <option>Mercedes-Benz</option>
-                    <option>Tesla</option>
-                    <option>Honda</option>
+                  <select
+                    onChange={handleSelectChange}
+                    value={selectedOption}
+                    className="select select-primary w-full"
+                  >
+                    <option value="" selected>
+                      Select
+                    </option>
+                    <option value="Sedans">Sedans</option>
+                    <option value="EV">EV</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="SAV">SAV</option>
+                    <option value="Pickup">Pickup</option>
+                    <option value="SUV">SUV</option>
+                  </select>
+
+                  <label className="label">
+                    <span className="label-text text-white  font-bold">
+                      Brand Name
+                    </span>
+                  </label>
+                  <select
+                    onChange={handleSelectNewChange}
+                    value={selectedOptionNew}
+                    className="select select-primary w-full"
+                  >
+                    <option value="" selected>
+                      Select
+                    </option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Ford">Ford</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Lamborghini">Lamborghini</option>
                   </select>
                 </div>
               </div>
@@ -142,7 +229,7 @@ const UpdateProduct = () => {
               </div>
             </div>
 
-            <button className="btn w-full mt-10 btn-primary">Submit</button>
+            <button className="btn w-full mt-10 btn-primary">Add</button>
           </form>
         </div>
       </div>

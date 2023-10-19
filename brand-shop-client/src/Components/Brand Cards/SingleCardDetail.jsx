@@ -1,3 +1,7 @@
+import { BsFillPenFill } from 'react-icons/bs';
+import { FaEye } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 const SingleCardDetail = ({ brand }) => {
   return (
     <div>
@@ -25,6 +29,91 @@ const SingleCardDetail = ({ brand }) => {
               <h1 className="card-title text-white">Type: {brand?.type}</h1>
               <h1 className="card-title text-white">Price: {brand?.price}</h1>
             </div>
+          </div>
+          <div className="flex items-center justify-evenly">
+            <div>
+              {/* Ratings */}
+              <h1 className="mx-auto text-white text-xl font-bold justify-center flex">
+                Ratings
+              </h1>
+              <div className="mx-auto flex justify-center">
+                <div className="rating rating-lg rating-half">
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="rating-hidden"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="bg-blue-500 mask mask-star-2 mask-half-1"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="bg-blue-500 mask mask-star-2 mask-half-2"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="bg-blue-500 mask mask-star-2 mask-half-1"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="bg-blue-500 mask mask-star-2 mask-half-2"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="bg-blue-500 mask mask-star-2 mask-half-1"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="bg-blue-500 mask mask-star-2 mask-half-2"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="bg-blue-500 mask mask-star-2 mask-half-1"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="bg-blue-500 mask mask-star-2 mask-half-2"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="bg-blue-500 mask mask-star-2 mask-half-1"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="bg-blue-500 mask mask-star-2 mask-half-2"
+                  />
+                </div>
+              </div>
+            </div>
+            <div>
+              <Link to="/updatecar">
+                <button className="btn btn-primary text-white">
+                  Update{' '}
+                  <span className="text-red-600">
+                    <BsFillPenFill></BsFillPenFill>
+                  </span>
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="flex justify-center mt-2">
+            <Link to={`/seedetails/:bandName1`}>
+              <button className="btn btn-primary">
+                View Details <FaEye></FaEye>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
