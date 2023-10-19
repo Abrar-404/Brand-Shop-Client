@@ -10,10 +10,22 @@ const SingleCardDetail = ({ brand }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title text-white">
-            Brand Name:
-            <div className="badge badge-secondary">{brand?.brandName1}</div>
-          </h2>
+          <div className="flex justify-evenly">
+            <div>
+              <h2 className="card-title text-white">
+                Brand Name:
+                <div className="badge badge-secondary">{brand?.brandName}</div>
+              </h2>
+              <h2 className="card-title text-white">
+                Name:
+                <div className="badge badge-secondary">{brand?.brandName1}</div>
+              </h2>
+            </div>
+            <div>
+              <h1 className="card-title text-white">Type: Car</h1>
+              <h1 className="card-title text-white">Price: {brand?.price}</h1>
+            </div>
+          </div>
         </div>
       </div>
     </div>

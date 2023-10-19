@@ -21,11 +21,19 @@ const CardDetails = ({ bring }) => {
           <SingleCardDetail key={brand.id} brand={brand}></SingleCardDetail>
         ))}
       </div>
-      <div className="text-center w-full flex mx-auto  justify-center">
+      <div className="text-center w-full flex mx-auto justify-center">
         {bring?.length === 0 ? (
-          <p className="text-white text-3xl w-full text-center  mx-auto flex justify-center">
-            No Products
-          </p>
+          <div>
+            <p className="text-white font-bold -mt-[50px] text-3xl w-full text-center mx-auto flex justify-center">
+              OOPS!!....... <br />
+              No Products Available Right Now
+            </p>
+            <img
+              src="https://i.ibb.co/frY869C/output-onlinegiftools-1.gif"
+              alt=""
+              className="-mt-[70px]"
+            />
+          </div>
         ) : (
           ''
         )}

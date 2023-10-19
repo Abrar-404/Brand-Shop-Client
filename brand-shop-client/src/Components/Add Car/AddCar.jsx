@@ -14,17 +14,13 @@ const AddCar = () => {
     const formData = e.target;
 
     const name = formData.name.value;
-    // const type = formData.type.value;
     const price = formData.price.value;
-    // const brand = formData.brand.value;
     const description = formData.description.value;
     const image = formData.image.value;
 
     const addCars = {
       name,
-      // type,
       price,
-      // brand,
       selectedOption,
       description,
       image,
@@ -32,13 +28,16 @@ const AddCar = () => {
 
     console.log(addCars);
 
-    fetch('https://brand-shop-server-il3ou5jut-abrar-404.vercel.app/brands', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(addCars),
-    })
+    fetch(
+      'https://brand-shop-server-fmc8uivho-abrar-404.vercel.app/userBrands',
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(addCars),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         console.log(data);

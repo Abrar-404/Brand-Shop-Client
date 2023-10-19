@@ -28,7 +28,7 @@ const Slider = () => {
       >
         <SwiperSlide>
           <img
-            className="w-full h-full border-x-4 border-y-4 border-pink-600"
+            className="h-full w-full border-x-4 border-y-4 border-pink-600"
             src="https://i.ibb.co/WkSQgc7/6d4d62aa70e5476a065ba09830dac2a1.jpg"
           />
         </SwiperSlide>
