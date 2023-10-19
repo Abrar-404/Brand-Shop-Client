@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         element: <AddedProducts></AddedProducts>,
         loader: () =>
           fetch(
-            'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/brands'
+            'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/userBrands'
           ),
       },
       {
