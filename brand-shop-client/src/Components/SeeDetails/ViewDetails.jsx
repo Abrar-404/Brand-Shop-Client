@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
 
 const ViewDetails = () => {
   const [bring, setBring] = useState([]);
+  const [cart, setCart] = useState();
   const bringAll = useLoaderData();
+
   // console.log(bringAll);
 
   const { _id } = useParams();
@@ -17,14 +19,23 @@ const ViewDetails = () => {
     // console.log(bringData);
     setBring(bringData);
   }, [_id, bringAll]);
+
+  const handleCart = e => {
+    // e.preventDefault();
+    console.log(bring?._id);
+  };
   // console.log(_id);
-  console.log(bring);
+  // console.log(bring);
   return (
     <div>
       <h1 className="text-3xl text-white">Details Here : </h1>
       <img src={bring?.image} alt="" />
       <h1 className="text-white">{bring?.brandName1}</h1>
-      <button className="btn">My Cart</button>
+      <Link>
+        <button onClick={() => handleCart()} className="btn">
+          Add to Cart
+        </button>
+      </Link>
     </div>
   );
 };

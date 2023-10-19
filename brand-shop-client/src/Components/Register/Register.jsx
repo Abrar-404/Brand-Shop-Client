@@ -24,8 +24,54 @@ const Register = () => {
     no-repeat
   `,
         });
+
         naviGate('/login');
         console.log(result.user);
+        const loggedUser = result?.user;
+        const savedUser = { email: loggedUser?.email, product: [] };
+        console.log(savedUser);
+
+        fetch('http://localhost:5000/user', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(savedUser),
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.insertedId) {
+              Swal.fire({
+                imageUrl: `https://i.ibb.co/H4HnLmL/yippee-yay.gif`,
+                title: 'WOOHOOO!!!! Welcome To The World!!!!',
+                width: 600,
+                padding: '3em',
+                color: '#7CFC00',
+                background: '#fff url()',
+                backdrop: `
+                          rgba(0,0,123,0.4)
+                          top
+                          no-repeat
+                          `,
+              });
+            }
+          })
+          .catch(error => {
+            console.error(error);
+            Swal.fire({
+              imageUrl: `https://i.ibb.co/ZLj6kP2/200w.gif`,
+              title: 'Email and Password did not match',
+              width: 600,
+              padding: '3em',
+              color: '#C70039 ',
+              background: '#fff url()',
+              backdrop: `
+        rgba(0,0,123,0.4)
+        top
+        no-repeat
+      `,
+            });
+          });
       })
       .catch(error => {
         console.error(error);
@@ -107,7 +153,51 @@ const Register = () => {
     no-repeat
   `,
         });
+        const loggedUser = result?.user;
+        const savedUser = { email: loggedUser?.email, product: [] };
+        console.log(savedUser);
         naviGate('/login');
+        fetch('http://localhost:5000/user', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(savedUser),
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.insertedId) {
+              Swal.fire({
+                imageUrl: `https://i.ibb.co/H4HnLmL/yippee-yay.gif`,
+                title: 'WOOHOOO!!!! Welcome To The World!!!!',
+                width: 600,
+                padding: '3em',
+                color: '#7CFC00',
+                background: '#fff url()',
+                backdrop: `
+                          rgba(0,0,123,0.4)
+                          top
+                          no-repeat
+                          `,
+              });
+            }
+          })
+          .catch(error => {
+            console.error(error);
+            Swal.fire({
+              imageUrl: `https://i.ibb.co/ZLj6kP2/200w.gif`,
+              title: 'Email and Password did not match',
+              width: 600,
+              padding: '3em',
+              color: '#C70039 ',
+              background: '#fff url()',
+              backdrop: `
+        rgba(0,0,123,0.4)
+        top
+        no-repeat
+      `,
+            });
+          });
       })
       .catch(error => {
         console.error(error);
