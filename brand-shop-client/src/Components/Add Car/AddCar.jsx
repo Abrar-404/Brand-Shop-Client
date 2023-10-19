@@ -3,9 +3,14 @@ import Swal from 'sweetalert2';
 
 const AddCar = () => {
   const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOptionNew, setSelectedOptionNew] = useState('');
 
   const handleSelectChange = e => {
     setSelectedOption(e.target.value);
+  };
+
+  const handleSelectNewChange = e => {
+    setSelectedOptionNew(e.target.value);
   };
 
   const handleAddCar = e => {
@@ -22,6 +27,7 @@ const AddCar = () => {
       name,
       price,
       selectedOption,
+      selectedOptionNew,
       description,
       image,
     };
@@ -108,14 +114,35 @@ const AddCar = () => {
                     className="select select-primary w-full"
                   >
                     <option value="" selected>
+                      Select
+                    </option>
+                    <option value="Sedans">Sedans</option>
+                    <option value="EV">EV</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="SAV">SAV</option>
+                    <option value="Pickup">Pickup</option>
+                    <option value="SUV">SUV</option>
+                  </select>
+
+                  <label className="label">
+                    <span className="label-text text-white  font-bold">
                       Brand Name
+                    </span>
+                  </label>
+                  <select
+                    onChange={handleSelectNewChange}
+                    value={selectedOptionNew}
+                    className="select select-primary w-full"
+                  >
+                    <option value="" selected>
+                      Select
                     </option>
                     <option value="Toyota">Toyota</option>
                     <option value="Ford">Ford</option>
                     <option value="BMW">BMW</option>
                     <option value="Mercedes-Benz">Mercedes-Benz</option>
-                    <option value="Lamborghini">Lamborghini</option>
                     <option value="Honda">Honda</option>
+                    <option value="Lamborghini">Lamborghini</option>
                   </select>
                 </div>
               </div>
