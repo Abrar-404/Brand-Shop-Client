@@ -229,7 +229,7 @@ const UpdateProduct = () => {
               </div>
             </div>
 
-            <button className="btn w-full mt-10 btn-primary">Add</button>
+            <button className="btn w-full mt-10 btn-primary">Submit</button>
           </form>
         </div>
       </div>

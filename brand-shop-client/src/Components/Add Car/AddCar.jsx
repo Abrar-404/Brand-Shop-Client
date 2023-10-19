@@ -34,16 +34,13 @@ const AddCar = () => {
 
     console.log(addCars);
 
-    fetch(
-      'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/userBrands',
-      {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(addCars),
-      }
-    )
+    fetch('http://localhost:5000/userBrands', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(addCars),
+    })
       .then(res => res.json())
       .then(data => {
         console.log(data);

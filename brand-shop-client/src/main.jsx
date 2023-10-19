@@ -27,10 +27,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () =>
-          fetch(
-            'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/newBrand'
-          ),
+        loader: () => fetch('http://localhost:5000/newBrand'),
       },
       {
         path: '/login',
@@ -55,18 +52,12 @@ const router = createBrowserRouter([
             <SeeDetails></SeeDetails>
           </PrivateRoute>
         ),
-        loader: () =>
-          fetch(
-            'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/allProducts'
-          ),
+        loader: () => fetch('http://localhost:5000/allProducts'),
       },
       {
         path: '/addedproducts',
         element: <AddedProducts></AddedProducts>,
-        loader: () =>
-          fetch(
-            'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/userBrands'
-          ),
+        loader: () => fetch('http://localhost:5000/userBrands'),
       },
       {
         path: '/cardDetails/:brandName',
@@ -75,10 +66,7 @@ const router = createBrowserRouter([
             <CardLoader></CardLoader>
           </PrivateRoute>
         ),
-        loader: () =>
-          fetch(
-            'https://brand-shop-server-ic59k87av-abrar-404.vercel.app/allProducts'
-          ),
+        loader: () => fetch('http://localhost:5000/allProducts'),
       },
       {
         path: '/addcar',
