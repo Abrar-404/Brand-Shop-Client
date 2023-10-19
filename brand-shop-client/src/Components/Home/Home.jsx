@@ -12,7 +12,7 @@ const Home = () => {
   const toggleTheme = () => {
     setIsLightTheme(prevTheme => !prevTheme);
   };
-  const pageThemeClass = isLightTheme ? 'light-theme' : 'dark-theme';
+  const pageThemeClass = isLightTheme ? 'dark-theme' : 'light-theme';
 
   return (
     <div className={pageThemeClass}>
