@@ -17,6 +17,7 @@ import ErrorElement from './Components/ErrorElement/ErrorElement';
 import CardLoader from './Components/Brand Cards/CardLoader';
 import AddedProducts from './Components/Added Products/AddedProducts';
 import DetailLoader from './Components/SeeDetails/detailLoader';
+import ViewDetails from './Components/SeeDetails/ViewDetails';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
       {
         path: '/footer',
         element: <Footer></Footer>,
+      },
+      {
+        path: '/viewdetails/:_id',
+        element: <ViewDetails></ViewDetails>,
+        loader: () => fetch(`http://localhost:5000/allProducts`),
       },
       {
         path: '/seedetails/:brandName',
@@ -83,7 +89,7 @@ const router = createBrowserRouter([
             <UpdateProduct></UpdateProduct>
           </PrivateRoute>
         ),
-        loader: ({params}) =>
+        loader: ({ params }) =>
           fetch(`http://localhost:5000/userBrands/${params.id}`),
       },
       {

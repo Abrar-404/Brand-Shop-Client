@@ -3,7 +3,7 @@ import { FaEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const SingleCardDetail = ({ brand }) => {
-  const { _id } = brand || {};
+  const { _id, id } = brand || {};
   return (
     <div>
       <div className="card card-compact w-full bg-slate-700 bg-opacity-30 shadow-xl">
@@ -110,7 +110,7 @@ const SingleCardDetail = ({ brand }) => {
             </div>
           </div>
           <div className="flex justify-evenly mt-2">
-            <Link>
+            <Link to={`/viewdetails/${id}`}>
               <button className="btn btn-primary">
                 View Details <FaEye></FaEye>
               </button>
