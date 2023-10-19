@@ -15,7 +15,6 @@ const CardLoader = () => {
   }, [brandName, bringAll]);
 
   // console.log(bring);
-  
 
   return <CardDetails bring={bring}></CardDetails>;
 };

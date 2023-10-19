@@ -5,7 +5,7 @@ const UpdateProduct = () => {
         <div className="p-24">
           <div className="mb-10">
             <h1 className="text-4xl text-white flex justify-center font-extrabold">
-              GRAB YOUR DREAM CAR
+              Update Your Product
             </h1>
           </div>
 

@@ -29,7 +29,7 @@ const AddCar = () => {
     console.log(addCars);
 
     fetch(
-      'https://brand-shop-server-fmc8uivho-abrar-404.vercel.app/userBrands',
+      'https://brand-shop-server-cijb9bvgw-abrar-404.vercel.app/userBrands',
       {
         method: 'POST',
         headers: {

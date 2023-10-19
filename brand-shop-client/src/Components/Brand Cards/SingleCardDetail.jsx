@@ -22,7 +22,7 @@ const SingleCardDetail = ({ brand }) => {
               </h2>
             </div>
             <div>
-              <h1 className="card-title text-white">Type: Car</h1>
+              <h1 className="card-title text-white">Type: {brand?.type}</h1>
               <h1 className="card-title text-white">Price: {brand?.price}</h1>
             </div>
           </div>

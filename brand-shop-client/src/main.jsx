@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () =>
           fetch(
-            'https://brand-shop-server-il3ou5jut-abrar-404.vercel.app/newBrand'
+            'https://brand-shop-server-cijb9bvgw-abrar-404.vercel.app/newBrand'
           ),
       },
       {
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: <AddedProducts></AddedProducts>,
         loader: () =>
           fetch(
-            'https://brand-shop-server-il3ou5jut-abrar-404.vercel.app/brands'
+            'https://brand-shop-server-cijb9bvgw-abrar-404.vercel.app/brands'
           ),
       },
       {
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            'https://brand-shop-server-il3ou5jut-abrar-404.vercel.app/allProducts'
+            'https://brand-shop-server-cijb9bvgw-abrar-404.vercel.app/allProducts'
           ),
       },
       {
