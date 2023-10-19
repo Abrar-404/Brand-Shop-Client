@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const UpdateProduct = () => {
   const [selectedOption, setSelectedOption] = useState('');
   const [selectedOptionNew, setSelectedOptionNew] = useState('');
+  const products = useLoaderData();
+  const { _id, brandName } = products || {};
 
   const handleSelectChange = e => {
     setSelectedOption(e.target.value);
@@ -13,37 +16,32 @@ const UpdateProduct = () => {
     setSelectedOptionNew(e.target.value);
   };
 
-  const handleAddCar = e => {
+  const handleUpdateCar = e => {
     e.preventDefault();
 
     const formData = e.target;
 
     const name = formData.name.value;
     const price = formData.price.value;
-    const description = formData.description.value;
     const image = formData.image.value;
 
-    const addCars = {
+    const UpdateCars = {
       name,
       price,
       selectedOption,
       selectedOptionNew,
-      description,
       image,
     };
 
-    console.log(addCars);
+    console.log(UpdateCars);
 
-    fetch(
-      'https://brand-shop-server-cijb9bvgw-abrar-404.vercel.app/userBrands',
-      {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(addCars),
-      }
-    )
+    fetch('http://localhost:5000/userBrands', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(UpdateCars),
+    })
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -65,11 +63,11 @@ const UpdateProduct = () => {
         <div className="p-24">
           <div className="mb-10">
             <h1 className="text-4xl text-white flex justify-center font-extrabold">
-              Update Your Car
+              Update Your Car : {brandName}
             </h1>
           </div>
 
-          <form onSubmit={handleAddCar}>
+          <form onSubmit={handleUpdateCar}>
             <div className="md:flex mb-8">
               <div className="form-control md:w-1/2">
                 <label className="label">

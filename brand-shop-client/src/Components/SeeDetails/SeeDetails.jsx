@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
+import SingleCardDetail from '../Brand Cards/SingleCardDetail';
 const SeeDetails = ({ bringDetail }) => {
-
-
   return (
     <div>
       <Link>

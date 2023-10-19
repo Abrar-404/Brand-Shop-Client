@@ -3,6 +3,7 @@ import { FaEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const SingleCardDetail = ({ brand }) => {
+  const { _id } = brand || {};
   return (
     <div>
       <div className="card card-compact w-full bg-slate-700 bg-opacity-30 shadow-xl">
@@ -98,7 +99,7 @@ const SingleCardDetail = ({ brand }) => {
               </div>
             </div>
             <div>
-              <Link to="/updatecar">
+              <Link to={`/updatecar/${_id}`}>
                 <button className="btn btn-primary text-white">
                   Update{' '}
                   <span className="text-red-600">

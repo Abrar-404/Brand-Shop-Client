@@ -77,12 +77,14 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/updatecar',
+        path: '/updatecar/:id',
         element: (
           <PrivateRoute>
             <UpdateProduct></UpdateProduct>
           </PrivateRoute>
         ),
+        loader: ({params}) =>
+          fetch(`http://localhost:5000/userBrands/${params.id}`),
       },
       {
         path: '/cart',
