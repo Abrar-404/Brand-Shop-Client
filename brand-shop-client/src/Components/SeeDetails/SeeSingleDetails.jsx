@@ -1,15 +1,11 @@
-import { BsFillPenFill } from 'react-icons/bs';
-import { FaEye } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-
-const SingleCardDetail = ({ brand }) => {
+const SeeSingleDetails = () => {
   return (
     <div>
       <div className="card card-compact w-full bg-slate-700 bg-opacity-30 shadow-xl">
         <figure>
           <img
             className="w-[90%] h-[250px] rounded-lg mt-10"
-            src={brand?.image}
+            src=""
             alt="Shoes"
           />
         </figure>
@@ -18,16 +14,16 @@ const SingleCardDetail = ({ brand }) => {
             <div>
               <h2 className="card-title text-white">
                 Brand Name:
-                <div className="badge badge-secondary">{brand?.brandName}</div>
+                <div className="badge badge-secondary">{}</div>
               </h2>
               <h2 className="card-title text-white">
                 Name:
-                <div className="badge badge-secondary">{brand?.brandName1}</div>
+                <div className="badge badge-secondary">{}</div>
               </h2>
             </div>
             <div>
-              <h1 className="card-title text-white">Type: {brand?.type}</h1>
-              <h1 className="card-title text-white">Price: {brand?.price}</h1>
+              <h1 className="card-title text-white">Type: {}</h1>
+              <h1 className="card-title text-white">Price: {}</h1>
             </div>
           </div>
           <div className="flex items-center justify-evenly">
@@ -97,7 +93,7 @@ const SingleCardDetail = ({ brand }) => {
                 </div>
               </div>
             </div>
-            <div>
+            {/* <div>
               <Link to="/updatecar">
                 <button className="btn btn-primary text-white">
                   Update{' '}
@@ -106,19 +102,19 @@ const SingleCardDetail = ({ brand }) => {
                   </span>
                 </button>
               </Link>
-            </div>
+            </div> */}
           </div>
-          <div className="flex justify-evenly mt-2">
-            <Link>
+          {/* <div className="flex justify-evenly mt-2">
+            <Link to={`/seedetails/${brandName}`}>
               <button className="btn btn-primary">
                 View Details <FaEye></FaEye>
               </button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
   );
 };
 
-export default SingleCardDetail;
+export default SeeSingleDetails;

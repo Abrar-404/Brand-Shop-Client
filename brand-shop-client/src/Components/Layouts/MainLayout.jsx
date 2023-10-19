@@ -10,6 +10,7 @@ const MainLayout = () => {
     backgroundAttachment: '',
   };
 
+
   return (
     <div
       style={backBg}

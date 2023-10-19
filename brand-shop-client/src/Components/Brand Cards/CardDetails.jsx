@@ -1,17 +1,9 @@
+
 import SingleCardDetail from './SingleCardDetail';
 import Slider from './Slider';
 
 const CardDetails = ({ bring }) => {
-  const {
-    image1,
-    image2,
-    image3,
-    image4,
-    brandName1,
-    brandName2,
-    brandName3,
-    brandName4,
-  } = bring || {};
+
   console.log(bring);
   return (
     <>

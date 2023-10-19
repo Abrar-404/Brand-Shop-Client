@@ -16,7 +16,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ErrorElement from './Components/ErrorElement/ErrorElement';
 import CardLoader from './Components/Brand Cards/CardLoader';
 import AddedProducts from './Components/Added Products/AddedProducts';
-import SeeDetails from './Components/SeeDetails/SeeDetails';
+import DetailLoader from './Components/SeeDetails/detailLoader';
 
 const router = createBrowserRouter([
   {
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         path: '/seedetails/:brandName',
         element: (
           <PrivateRoute>
-            <SeeDetails></SeeDetails>
+            <DetailLoader></DetailLoader>
           </PrivateRoute>
         ),
         loader: () => fetch('http://localhost:5000/allProducts'),

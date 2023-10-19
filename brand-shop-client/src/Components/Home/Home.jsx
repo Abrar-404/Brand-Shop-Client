@@ -4,14 +4,24 @@ import Services from '../Services/Services';
 import BrandCards from '../Brand Cards/BrandCards';
 import { useLoaderData } from 'react-router-dom';
 import Slider2 from '../Hot deals/Slider2';
+import { useState } from 'react';
 
 const Home = () => {
+  const [isLightTheme, setIsLightTheme] = useState(true);
   const brands = useLoaderData();
+  const toggleTheme = () => {
+    setIsLightTheme(prevTheme => !prevTheme);
+  };
+  const pageThemeClass = isLightTheme ? 'light-theme' : 'dark-theme';
 
   return (
-    <div>
-      <h1>This is home</h1>
-
+    <div className={pageThemeClass}>
+      <input
+        type="checkbox"
+        className="toggle lg:ml-[1340px] md:ml-[710px] ml-[370px] mt-5 mb-5 toggle-primary"
+        checked={isLightTheme}
+        onChange={toggleTheme}
+      />
       <Banner></Banner>
       <Services></Services>
       <div>
