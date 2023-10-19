@@ -19,14 +19,14 @@ const Home = () => {
       <input
         type="checkbox"
         className="toggle lg:ml-[1340px] md:ml-[710px] ml-[370px] mt-5 mb-5 toggle-primary"
-        checked={isLightTheme}
+        checked={!isLightTheme}
         onChange={toggleTheme}
       />
       <Banner></Banner>
       <Services></Services>
       <div>
         <div className="text-3xl  flex justify-center text-left mt-20 font-bold">
-          <h1 className="text-white text-left mx-auto">
+          <h1 className="text-[#6419E6] text-left mx-auto">
             Hot <span className="text-red-600">Deals</span>
           </h1>
         </div>
@@ -34,7 +34,7 @@ const Home = () => {
           <Slider2></Slider2>
         </div>
       </div>
-      <h1 className="text-center mt-20 text-3xl font-bold text-white">
+      <h1 className="text-center text-[#6419E6] mt-20 text-3xl font-bold">
         Our <span className="text-red-600">Brands</span>
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-5 mt-10">

@@ -23,7 +23,9 @@ const Footer = () => {
         </aside>
         <nav className="flex lg:justify-end md:justify-end justify-center mx-auto">
           <div>
-            <header className="footer-title">Contact Us</header>
+            <header className="text-xl font-bold text-white">
+              Contact <span className="text-red-600">Us</span>
+            </header>
             <div className="flex items-center gap-5">
               <div className="grid text-white text-lg grid-flow-col gap-4">
                 <FaFacebookSquare></FaFacebookSquare>

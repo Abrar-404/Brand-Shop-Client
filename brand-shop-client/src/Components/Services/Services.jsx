@@ -6,8 +6,8 @@ AOS.init();
 const Services = () => {
   return (
     <div>
-      <h1 className="text-center text-3xl mt-20 text-white font-bold">
-        Our Services
+      <h1 className="text-center text-3xl text-[#6419E6] mt-20 font-bold">
+        Our <span className="text-red-600">Services</span>
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 overflow-hidden mx-auto">
         <div
