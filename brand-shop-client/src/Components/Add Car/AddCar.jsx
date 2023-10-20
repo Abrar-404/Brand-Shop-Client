@@ -1,23 +1,25 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const AddCar = () => {
-  const [selectedOption, setSelectedOption] = useState('');
-  const [selectedOptionNew, setSelectedOptionNew] = useState('');
+  const [type, setType] = useState('');
+  const [brandName, setBrandName] = useState('');
 
+  const { user } = useContext(AuthContext);
   const handleSelectChange = e => {
-    setSelectedOption(e.target.value);
+    setType(e.target.value);
   };
 
   const handleSelectNewChange = e => {
-    setSelectedOptionNew(e.target.value);
+    setBrandName(e.target.value);
   };
 
   const handleAddCar = e => {
     e.preventDefault();
 
     const formData = e.target;
-
+    const email = user.email;
     const name = formData.name.value;
     const price = formData.price.value;
     const description = formData.description.value;
@@ -25,9 +27,10 @@ const AddCar = () => {
 
     const addCars = {
       name,
+      email,
       price,
-      selectedOption,
-      selectedOptionNew,
+      type,
+      brandName,
       description,
       image,
     };
@@ -78,13 +81,12 @@ const AddCar = () => {
           return response.json();
         } else if (response.status === 400) {
           // Product already exists, show an alert
-          return response.text().then(message => {
-            alert(`Product already exists in the cart: ${message}`);
-          });
+          // return response.text().then(message => {
+          //   alert(`Product already exists in the cart: ${message}`);
+          // });
         }
       });
 
-    // });
     console.log(addCars);
   };
 
@@ -139,7 +141,7 @@ const AddCar = () => {
                   </label>
                   <select
                     onChange={handleSelectChange}
-                    value={selectedOption}
+                    value={type}
                     className="select select-primary w-full"
                   >
                     <option value="" selected>
@@ -160,7 +162,7 @@ const AddCar = () => {
                   </label>
                   <select
                     onChange={handleSelectNewChange}
-                    value={selectedOptionNew}
+                    value={brandName}
                     className="select select-primary w-full"
                   >
                     <option value="" selected>

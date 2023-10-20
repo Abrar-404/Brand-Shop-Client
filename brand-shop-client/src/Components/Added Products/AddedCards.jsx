@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -5,12 +6,19 @@ const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
   const {
     _id,
     name,
+    email,
     price,
     selectedOption,
     selectedOptionNew,
     description,
     image,
   } = userbrands || {};
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/userBrands?email=${email}`)
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }, [email]);
 
   const handleDelete = _id => {
     Swal.fire({

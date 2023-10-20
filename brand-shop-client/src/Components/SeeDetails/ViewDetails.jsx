@@ -1,13 +1,16 @@
 import { useEffect } from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const ViewDetails = () => {
   const [bring, setBring] = useState([]);
   const [cart, setCart] = useState([]);
   const bringAll = useLoaderData();
   const [products, setProducts] = useState([]);
+  const { user } = useContext(AuthContext);
 
   // console.log(bringAll);
 
@@ -21,6 +24,7 @@ const ViewDetails = () => {
   }, [_id, bringAll]);
 
   const newProduct = {
+    email: user.email,
     id: bring?.id,
     status_: bring?.status,
     brandName: bring?.brandName,

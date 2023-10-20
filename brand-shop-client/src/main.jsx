@@ -63,7 +63,6 @@ const router = createBrowserRouter([
       {
         path: '/addedproducts',
         element: <AddedProducts></AddedProducts>,
-        loader: () => fetch('http://localhost:5000/userBrands'),
       },
       {
         path: '/cardDetails/:brandName',
