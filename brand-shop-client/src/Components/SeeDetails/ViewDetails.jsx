@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ViewDetails = () => {
   const [bring, setBring] = useState([]);
-  const [cart, setCart] = useState();
+  const [cart, setCart] = useState([]);
   const bringAll = useLoaderData();
+  const [products, setProducts] = useState([]);
 
   // console.log(bringAll);
 
@@ -15,17 +17,54 @@ const ViewDetails = () => {
 
   useEffect(() => {
     const bringData = bringAll.find(bring => bring?.id == idInt);
-    // const bringData = bringAll.find(bring => console.log(bring?.id, _id));
-    // console.log(bringData);
     setBring(bringData);
   }, [_id, bringAll]);
 
-  const handleCart = e => {
-    // e.preventDefault();
-    console.log(bring?._id);
+  const newProduct = {
+    id: bring?.id,
+    status_: bring?.status,
+    brandName: bring?.brandName,
+    brandName1: bring?.brandName1,
+    image: bring?.image,
+    price: bring?.price,
+    description: bring?.description,
+    type: bring?.type,
   };
-  // console.log(_id);
-  // console.log(bring);
+
+  const addMyProducts = () => {
+    fetch('http://localhost:5000/cart', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(newProduct),
+    })
+      // .then(res => res.json())
+      .then(response => {
+        if (response.status === 200) {
+          // Product added successfully
+
+          // return response.json();
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Product Added Successfully',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          return response.json();
+        } else if (response.status === 400) {
+          // Product already exists, show an alert
+          return response.text().then(message => {
+            alert(`Product already exists in the cart: ${message}`);
+          });
+        }
+      });
+
+    // });
+    console.log(newProduct);
+  };
+
   return (
     <div>
       <div className="card card-compact lg:w-[40%] md:w-[70%] w-[100%] flex mx-auto justify-center mt-40 bg-slate-700 bg-opacity-30 shadow-xl">
@@ -57,7 +96,7 @@ const ViewDetails = () => {
           <div className="mx-auto">
             <Link>
               <button
-                onClick={() => handleCart()}
+                onClick={() => addMyProducts()}
                 className="btn btn-secondary"
               >
                 Add to Cart

@@ -99,6 +99,7 @@ const router = createBrowserRouter([
             <Cart></Cart>
           </PrivateRoute>
         ),
+        loader: () => fetch('http://localhost:5000/cart'),
       },
     ],
   },

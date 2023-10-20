@@ -54,6 +54,38 @@ const AddCar = () => {
           });
         }
       });
+
+    fetch('http://localhost:5000/cart', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(addCars),
+    })
+      // .then(res => res.json())
+      .then(response => {
+        if (response.status === 200) {
+          // Product added successfully
+
+          // return response.json();
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Product Added Successfully',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          return response.json();
+        } else if (response.status === 400) {
+          // Product already exists, show an alert
+          return response.text().then(message => {
+            alert(`Product already exists in the cart: ${message}`);
+          });
+        }
+      });
+
+    // });
+    console.log(addCars);
   };
 
   return (
