@@ -28,14 +28,44 @@ const ViewDetails = () => {
   // console.log(bring);
   return (
     <div>
-      <h1 className="text-3xl text-white">Details Here : </h1>
-      <img src={bring?.image} alt="" />
-      <h1 className="text-white">{bring?.brandName1}</h1>
-      <Link>
-        <button onClick={() => handleCart()} className="btn">
-          Add to Cart
-        </button>
-      </Link>
+      <div className="card card-compact lg:w-[40%] md:w-[70%] w-[100%] flex mx-auto justify-center mt-40 bg-slate-700 bg-opacity-30 shadow-xl">
+        <figure>
+          <img
+            className="w-[90%] h-[250px] rounded-lg mt-10"
+            src={bring?.image}
+            alt="Shoes"
+          />
+        </figure>
+        <div className="card-body">
+          <div className="flex justify-evenly">
+            <div>
+              <h2 className="card-title text-white">
+                <div className="badge badge-secondary text-xs">
+                  {bring?.brandName1}
+                </div>
+              </h2>
+            </div>
+            <div>
+              <h1 className="card-title text-white text-xs md:text-base lg:text-lg">
+                {bring?.description}
+              </h1>
+            </div>
+          </div>
+          <div className="mx-auto">
+            <Link>
+              <button onClick={() => handleCart()} className="btn justi">
+                Add to Cart
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <img
+        className="rounded-full mx-auto w-[10%] mt-5 h-[30%]"
+        src="https://i.ibb.co/ZdZV812/hot-typography.gif"
+        alt=""
+      />
     </div>
   );
 };
