@@ -6,8 +6,8 @@
     "brandName1": "Toyota Bent",
     "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
     "price": "$354000",
-    "description": "Reliable and efficient family cars.",
-    "type": "SUV"
+    "description": "The Toyota Bent is a well-known midsize sedan that's recognized for its reliability, comfort, and fuel efficiency. It's a popular choice for drivers seeking a dependable and practical vehicle for everyday use..",
+    "type": "Sedan"
   },
   {
     "id": 2,
@@ -16,7 +16,7 @@
     "brandName1": "Toyota bZ4X",
     "image": "https://i.ibb.co/2v35Sn8/Toyota-b-Z4-X-2021-15-e1648624605317-810x456.jpg",
     "price": "$455000",
-    "description": "Reliable and efficient family cars.",
+    "description": "The Toyota bZ4X is an all-electric SUV designed for eco-conscious drivers, part of Toyota's Beyond Zero (bZ) electric vehicle series. It offers a blend of sustainability and practicality, with a focus on zero-emission driving and modern features.",
     "type": "SUV."
   },
   {
@@ -26,8 +26,8 @@
     "brandName1": "Toyota Camry",
     "image": "https://i.ibb.co/z4zktVP/2023-toyota-camry-forward-view-carbuzz-854650.jpg",
     "price": "$55000",
-    "description": "Reliable and efficient family cars.",
-    "type": "EV."
+    "description": "The Toyota Camry is a well-known midsize sedan celebrated for its reliability, comfort, and fuel efficiency. It's a popular choice for those in search of a dependable and practical vehicle for everyday use.",
+    "type": "Sedan"
   },
   {
     "id": 4,
@@ -36,7 +36,7 @@
     "brandName1": "Toyota Hilux",
     "image": "https://i.ibb.co/7Q1ZrNh/front-left-side-47.webp",
     "price": "$75000",
-    "description": "Reliable and efficient family cars.",
+    "description": "The Toyota Hilux is a rugged and durable pickup truck that's renowned for its off-road capability and reliability. It's a popular choice for drivers who need a robust vehicle for work and adventurous off-road activities..",
     "type": "Pickup"
   },
   {
@@ -46,7 +46,7 @@
     "brandName1": "Ford Ranger",
     "image": "https://i.ibb.co/PZNXNmw/suv-img-bronco-sport.jpg",
     "price": "$543000",
-    "description": "Reliable and efficient family cars.",
+    "description": "The Ford Ranger is a compact pickup truck known for its versatility and off-road prowess. It's a popular choice for those in need of a capable and practical vehicle for various purposes, from daily commuting to outdoor adventures.",
     "type": "Pickup"
   },
   {
@@ -56,7 +56,7 @@
     "brandName1": "F-10 Raptor",
     "image": "https://i.ibb.co/xFHJZzT/images.jpg",
     "price": "$212000",
-    "description": "Reliable and efficient family cars.",
+    "description": "I'm not aware of a specific model called the F-10 Raptor made by Ford or any other manufacturer as of my last knowledge update in September 2021. If this is a new or uncommon model introduced after that date, I recommend checking the latest sources or the official manufacturer's website for the most up-to-date information.",
     "type": "Pickup"
   },
   {
@@ -66,7 +66,7 @@
     "brandName1": "Ford Puma",
     "image": "https://i.ibb.co/9qdqZ1v/Ford-Puma-ST-Line-011-c6u4pl.webp",
     "price": "$90000",
-    "description": "Reliable and efficient family cars.",
+    "description": "The Ford Puma is a subcompact crossover SUV produced by Ford. Known for its stylish design and practicality, the Ford Puma offers a range of features and efficient engines, making it a popular choice for urban and suburban driving.",
     "type": "SUV"
   },
   {
@@ -76,7 +76,7 @@
     "brandName1": "Ford GT",
     "image": "https://i.ibb.co/k2vQ7Wt/107129255-1664912148718-2022-Ford-GT-LM-Edition-Front-in-Blue.jpg",
     "price": "$906000",
-    "description": "Reliable and efficient family cars.",
+    "description": "The Ford GT is a high-performance sports car with a rich racing heritage. It's known for its aerodynamic design, powerful engine, and advanced technology, making it a sought-after model among automotive enthusiasts and collectors..",
     "type": "SAV"
   },
   {
@@ -86,17 +86,17 @@
     "brandName1": "Honda Type R v.1",
     "image": "https://i.ibb.co/9vLMZWg/New-Honda-Civic-Type-R.jpg",
     "price": "$251000",
-    "description": "Reliable and efficient family cars.",
+    "description": "The Honda Type R v.1, also known as the Honda Civic Type R EK9, is a high-performance version of the Honda Civic produced in the late 1990s. It's celebrated for its lightweight construction, sporty design, and agile handling, making it a favorite among car enthusiasts and fans of the Type R series.",
     "type": "SAV"
   },
   {
     "id": 10,
     "status": "Available Right Now",
     "brandName": "Honda",
-    "brandName1": "Honda CV Type-R",
+    "brandName1": "Honda CR-v Hybrid",
     "image": "https://i.ibb.co/CsZCpMd/honda-civic-type-r-touring-car-promo.webp",
     "price": "$191000",
-    "description": "Reliable and efficient family cars.",
+    "description": "The Honda CR-V Hybrid is a hybrid version of the popular Honda CR-V, a compact SUV. It combines a gasoline engine with an electric motor to provide improved fuel efficiency and reduced emissions while maintaining the practicality and versatility that the CR-V is known for. The CR-V Hybrid is an eco-friendly choice for those seeking an SUV with lower environmental impact.",
     "type": "SAV"
   },
   {
@@ -106,8 +106,8 @@
     "brandName1": "Honda City V",
     "image": "https://i.ibb.co/1QYQShj/Honda-City-main-1678338086717-1693032218681.jpg",
     "price": "$795000",
-    "description": "Reliable and efficient family cars.",
-    "type": "EV."
+    "description": "The Honda City is a popular compact sedan known for its practicality, fuel efficiency, and comfortable interior. It's a well-liked choice among urban and suburban drivers, offering a balance of affordability and features for everyday commuting.",
+    "type": "Sedan"
   },
   {
     "id": 12,
@@ -116,8 +116,8 @@
     "brandName1": "Honda Trivia",
     "image": "https://i.ibb.co/mvX9drM/6c2218695c14737cdef4c81e2c4fe814.jpg",
     "price": "$25400",
-    "description": "Reliable and efficient family cars.",
-    "type": "EV"
+    "description": "Honda Trivia, known for its performance and sporty design, holds the title for being the fastest front-wheel-drive production car to lap the Nürburgring Nordschleife, a famous racing circuit in Germany. It completed the lap in just over 7 minutes, showcasing its impressive performance capabilities.",
+    "type": "SAV"
   },
   {
     "id": 13,
@@ -126,7 +126,7 @@
     "brandName1": "BMW i8",
     "image": "https://i.ibb.co/VqCNVg7/IEIGHT-MAIN-i.jpg",
     "price": "$956000",
-    "description": "Reliable and efficient family cars.",
+    "description": "The BMW i8 is a hybrid sports car known for its striking design and high-performance capabilities, combining a powerful electric motor with a turbocharged gasoline engine for an exhilarating driving experience.",
     "type": "SAV"
   },
   {
@@ -136,8 +136,8 @@
     "brandName1": "BMW m3 Coupe",
     "image": "https://i.ibb.co/8KXhR4Y/maxresdefault.jpg",
     "price": "$255000",
-    "description": "Reliable and efficient family cars.",
-    "type": "Coupe"
+    "description": "The BMW M3 Coupe, known for its high-performance capabilities and sporty design, was a popular variant of the BMW M3 series. It featured a powerful engine, enhanced suspension, and other performance-focused upgrades, making it a sought-after choice for sports car enthusiasts.",
+    "type": "Sedan"
   },
   {
     "id": 15,
@@ -146,7 +146,7 @@
     "brandName1": "BMW Z4",
     "image": "https://i.ibb.co/88b0hWN/20190320124215-bmw-z4-20l-1604e.jpg",
     "price": "$25200",
-    "description": "Reliable and efficient family cars.",
+    "description": "The BMW Z4 is a stylish and sporty convertible or coupe sports car known for its dynamic performance and luxurious features. It's designed for drivers who seek an open-air driving experience and a blend of BMW's driving excellence. The Z4 offers a balance of sportiness and comfort, making it a popular choice for those who appreciate a spirited driving experience.",
     "type": "EV"
   },
   {
@@ -156,7 +156,7 @@
     "brandName1": "BMW i7",
     "image": "https://i.ibb.co/fDpjDMS/intro-1657741008.jpg",
     "price": "$845000",
-    "description": "Reliable and efficient family cars.",
+    "description": "The BMW i7 is a luxury electric sedan known for its cutting-edge technology, spacious interior, and impressive electric range, offering a premium and environmentally-friendly driving experience.",
     "type": "Sedan"
   },
   {
@@ -166,8 +166,8 @@
     "brandName1": "Mercedes-Benz GT V8",
     "image": "https://i.ibb.co/j5S4Dy7/19c1037-004-1-1578423453.jpg",
     "price": "$265000",
-    "description": "Reliable and efficient family cars.",
-    "type": "Sedan"
+    "description": "The Mercedes-Benz GT V8 is a high-performance sports car known for its powerful V8 engine, luxurious interior, and striking design. It's part of the Mercedes-AMG GT series, offering exceptional performance and a thrilling driving experience, appealing to enthusiasts who value both speed and luxury.",
+    "type": "SAV"
   },
   {
     "id": 18,
@@ -176,8 +176,8 @@
     "brandName1": "Mercedes-Benz GT",
     "image": "https://i.ibb.co/CwXn31z/pexels-mike-bird-2365572.jpg",
     "price": "$250100",
-    "description": "Reliable and efficient family cars.",
-    "type": "Sedan"
+    "description": "The Mercedes-Benz GT, often referred to as the Mercedes-AMG GT, is a high-performance sports car that combines powerful engines, precision handling, and luxury features. It's part of the Mercedes-AMG line, designed for enthusiasts who appreciate a blend of speed, style, and advanced technology in their sports cars.",
+    "type": "SAV"
   },
   {
     "id": 19,
@@ -186,7 +186,7 @@
     "brandName1": "Mercedes-Benz AMG",
     "image": "https://i.ibb.co/vsGHj4s/edfd8f0dd197e8dfb83161bf8ea01a47.jpg",
     "price": "$252000",
-    "description": "Reliable and efficient family cars.",
+    "description": "Mercedes-AMG is the high-performance and tuning division of Mercedes-Benz. They specialize in enhancing Mercedes-Benz vehicles with more powerful engines, sportier handling, and distinctive design elements. Mercedes-AMG models are known for their exceptional performance and are often favored by those seeking a combination of luxury and sportiness in their vehicles.",
     "type": "Sedan"
   },
   {
@@ -196,7 +196,7 @@
     "brandName1": "Mercedes-Benz-CLE",
     "image": "https://i.ibb.co/VjX8KWS/Mercedes-Benz-CLE-revealed-2.jpg",
     "price": "$9056000",
-    "description": "Reliable and efficient family cars.",
+    "description": "The Mercedes CLE, also known as the Mercedes-Benz CLE, is a luxury coupe or convertible model produced by Mercedes-Benz. It offers a combination of style, performance, and advanced technology, providing a premium driving experience",
     "type": "EV"
   }
 ]

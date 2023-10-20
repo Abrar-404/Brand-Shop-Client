@@ -37,23 +37,29 @@ const ViewDetails = () => {
           />
         </figure>
         <div className="card-body">
-          <div className="flex justify-evenly">
+          <div className="">
             <div>
-              <h2 className="card-title text-white">
+              <h2 className="card-title flex justify-around text-white">
                 <div className="badge badge-secondary text-xs">
                   {bring?.brandName1}
+                </div>
+                <div className="badge badge-secondary text-xs">
+                  {bring?.price}
                 </div>
               </h2>
             </div>
             <div>
-              <h1 className="card-title text-white text-xs md:text-base lg:text-lg">
+              <h1 className="card-title mt-5 text-white text-xs md:text-sm lg:text-base">
                 {bring?.description}
               </h1>
             </div>
           </div>
           <div className="mx-auto">
             <Link>
-              <button onClick={() => handleCart()} className="btn justi">
+              <button
+                onClick={() => handleCart()}
+                className="btn btn-secondary"
+              >
                 Add to Cart
               </button>
             </Link>
@@ -62,7 +68,7 @@ const ViewDetails = () => {
       </div>
 
       <img
-        className="rounded-full mx-auto w-[10%] mt-5 h-[30%]"
+        className="rounded-full mx-auto lg:w-[10%] mt-5 lg:h-[30%] md:w-[20%] md:h-[20%] w-[20%] h-[20%]"
         src="https://i.ibb.co/ZdZV812/hot-typography.gif"
         alt=""
       />
