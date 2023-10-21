@@ -18,6 +18,7 @@ import CardLoader from './Components/Brand Cards/CardLoader';
 import AddedProducts from './Components/Added Products/AddedProducts';
 import DetailLoader from './Components/SeeDetails/detailLoader';
 import ViewDetails from './Components/SeeDetails/ViewDetails';
+import UpdateItem from './Components/Added Products/UpdateItem';
 
 const router = createBrowserRouter([
   {
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch('http://localhost:5000/cart'),
+      },
+      {
+        path: '/updateItem/:id',
+        element: <UpdateItem />,
       },
     ],
   },

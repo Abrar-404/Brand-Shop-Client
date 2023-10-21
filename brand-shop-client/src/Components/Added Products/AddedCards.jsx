@@ -68,6 +68,9 @@ const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
             Brand Name: {selectedOptionNew}
           </p>
         </div>
+        <Link to={`/updatecar/${_id}`}>
+          <button className="btn btn-primary">Update</button>
+        </Link>
         <button onClick={() => handleDelete(_id)} className="btn">
           Delete
         </button>

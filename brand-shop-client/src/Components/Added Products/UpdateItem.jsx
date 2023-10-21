@@ -1,36 +1,29 @@
-import { useState, useContext } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useState, useContext, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Providers/AuthProvider';
 
-const UpdateProduct = () => {
-  const [selectedOption, setSelectedOption] = useState('');
-  const [selectedOptionNew, setSelectedOptionNew] = useState('');
-  const products = useLoaderData();
-  const { _id, name, email, price, type, brandName, description, image } =
-    products || {};
+const UpdateItem = () => {
+  const [item, setItem] = useState({});
+  const [type, setType] = useState('');
+  const [brandName, setBrandName] = useState('');
   const { user } = useContext(AuthContext);
 
-  const handleSelectChange = e => {
-    setSelectedOption(e.target.value);
-  };
+  const { _id, name, price, description, image } = item;
 
   const handleSelectNewChange = e => {
-    setSelectedOptionNew(e.target.value);
+    setBrandName(e.target.value);
   };
 
-  const handleUpdateCar = e => {
+  const handleAddCar = e => {
     e.preventDefault();
-
     const formData = e.target;
-
     const email = user.email;
     const name = formData.name.value;
-    // const price = formData.price.value;
-    // const description = formData.description.value;
-    // const image = formData.image.value;
+    const price = formData.price.value;
+    const description = formData.description.value;
+    const image = formData.image.value;
 
-    const UpdateCars = {
+    const addCars = {
       name,
       email,
       price,
@@ -40,29 +33,26 @@ const UpdateProduct = () => {
       image,
     };
 
-    console.log(UpdateCars);
+    console.log(addCars);
 
     fetch(`http://localhost:5000/userBrands/${_id}`, {
-      method: 'PATCH',
+      method: 'PUT',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify(UpdateCars),
+      body: JSON.stringify(addCars),
     })
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Product Added Successfully',
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
       });
   };
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/userBrands/${_id}`)
+      .then(res => res.json())
+      .then(data => setItem(data));
+  });
 
   return (
     <div>
@@ -70,11 +60,11 @@ const UpdateProduct = () => {
         <div className="p-24">
           <div className="mb-10">
             <h1 className="text-4xl text-white flex justify-center font-extrabold">
-              Update Your Car : {brandName}
+              GRAB YOUR DREAM CAR
             </h1>
           </div>
 
-          <form onSubmit={handleUpdateCar}>
+          <form onSubmit={handleAddCar}>
             <div className="md:flex mb-8">
               <div className="form-control md:w-1/2">
                 <label className="label">
@@ -83,8 +73,9 @@ const UpdateProduct = () => {
                 <label className="input-group">
                   <input
                     type="text"
-                    defaultValue={name}
+                    placeholder="Name"
                     name="name"
+                    defaultValue={name}
                     className="input input-bordered input-primary w-full rounded-lg"
                   />
                 </label>
@@ -98,6 +89,7 @@ const UpdateProduct = () => {
                   <input
                     type="number"
                     name="price"
+                    placeholder="$Price"
                     defaultValue={price}
                     className="input input-bordered input-primary w-full rounded-lg"
                   />
@@ -115,7 +107,7 @@ const UpdateProduct = () => {
                   </label>
                   <select
                     onChange={handleSelectChange}
-                    value={selectedOption}
+                    value={type}
                     className="select select-primary w-full"
                   >
                     <option value="" selected>
@@ -136,7 +128,7 @@ const UpdateProduct = () => {
                   </label>
                   <select
                     onChange={handleSelectNewChange}
-                    value={selectedOptionNew}
+                    value={brandName}
                     className="select select-primary w-full"
                   >
                     <option value="" selected>
@@ -153,6 +145,21 @@ const UpdateProduct = () => {
               </div>
             </div>
 
+            <div className="w-full">
+              <label className="label">
+                <span className="label-text text-white font-bold">
+                  Short Description
+                </span>
+              </label>
+              <textarea
+                className="textarea w-full textarea-primary"
+                type="text"
+                defaultValue={description}
+                name="description"
+                placeholder="Ex: The Lamborghini Revuelto, I prefer Red Color and in Model-2015"
+              ></textarea>
+            </div>
+
             <div className="mb-8">
               <div className="form-control w-full">
                 <label className="label">
@@ -161,8 +168,9 @@ const UpdateProduct = () => {
                 <label className="input-group">
                   <input
                     type="text"
-                    name="image"
                     defaultValue={image}
+                    name="image"
+                    placeholder="Ex: https://i.ibb.co/4TNVZM2/360-F-551262235-q-Ny2-OAKOkb639g1ra-Bm-IKWHDlr-LQBWEH.jpg"
                     className="input input-bordered input-primary w-full rounded-lg"
                   />
                 </label>
@@ -234,7 +242,7 @@ const UpdateProduct = () => {
               </div>
             </div>
 
-            <button className="btn w-full mt-10 btn-primary">Submit</button>
+            <button className="btn w-full mt-10 btn-primary">Add</button>
           </form>
         </div>
       </div>
@@ -242,4 +250,4 @@ const UpdateProduct = () => {
   );
 };
 
-export default UpdateProduct;
+export default UpdateItem;
