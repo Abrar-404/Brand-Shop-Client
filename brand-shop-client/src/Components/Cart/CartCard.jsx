@@ -18,12 +18,9 @@ const CartCard = ({ product, usedProducts, setUsedProducts }) => {
 
         console.log('Deleted Successfully');
 
-        fetch(
-          `https://brand-shop-server-phju0kq6a-abrar-404.vercel.app/cart/${_id}`,
-          {
-            method: 'DELETE',
-          }
-        )
+        fetch(`https://brand-shop-server-alpha.vercel.app/cart/${_id}`, {
+          method: 'DELETE',
+        })
           .then(res => res.json())
           .then(data => {
             console.log(data);
@@ -51,7 +48,7 @@ const CartCard = ({ product, usedProducts, setUsedProducts }) => {
           />
         </figure>
         <div className="card-body">
-          <div className="card-title flex items-center justify-aroundp text-white">
+          <div className="card-title flex items-center justify-around text-white">
             <div className="text-left">
               <div className="flex mx-auto gap-2 items-center">
                 <h1>Brand Name:</h1>

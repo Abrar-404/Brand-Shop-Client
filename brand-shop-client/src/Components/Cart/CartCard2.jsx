@@ -19,12 +19,9 @@ const CartCard2 = ({ product, customCard, setCustomCard }) => {
 
         console.log('Deleted Successfully');
 
-        fetch(
-          `https://brand-shop-server-phju0kq6a-abrar-404.vercel.app/userBrands/${_id}`,
-          {
-            method: 'DELETE',
-          }
-        )
+        fetch(`https://brand-shop-server-alpha.vercel.app/userBrands/${_id}`, {
+          method: 'DELETE',
+        })
           .then(res => res.json())
           .then(data => {
             console.log(data);

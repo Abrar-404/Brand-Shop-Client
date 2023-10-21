@@ -39,16 +39,13 @@ const UpdateProduct = () => {
 
     console.log(UpdateCars);
 
-    fetch(
-      `https://brand-shop-server-phju0kq6a-abrar-404.vercel.app/updateItem/${_id}`,
-      {
-        method: 'PATCH',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(UpdateCars),
-      }
-    )
+    fetch(`https://brand-shop-server-alpha.vercel.app/updateItem/${_id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(UpdateCars),
+    })
       .then(res => res.json())
       .then(data => {
         console.log(data);
