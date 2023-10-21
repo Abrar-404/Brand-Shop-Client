@@ -42,13 +42,16 @@ const UpdateProduct = () => {
 
     console.log(UpdateCars);
 
-    fetch(`http://localhost:5000/userBrands/${_id}`, {
-      method: 'PATCH',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(UpdateCars),
-    })
+    fetch(
+      `https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands/${_id}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(UpdateCars),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         console.log(data);

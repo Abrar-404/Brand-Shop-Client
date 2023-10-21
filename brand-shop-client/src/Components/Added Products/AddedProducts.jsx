@@ -5,7 +5,7 @@ import AddedCards from './AddedCards';
 const AddedProducts = () => {
   const { user } = useContext(AuthContext);
   const [usedProducts, setUsedProducts] = useState();
-  const url = `http://localhost:5000/userBrands?email=${user?.email}`;
+  const url = `https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
@@ -31,4 +31,3 @@ const AddedProducts = () => {
 };
 
 export default AddedProducts;
-

@@ -15,7 +15,9 @@ const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
   } = userbrands || {};
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userBrands?email=${email}`)
+    fetch(
+      `https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands?email=${email}`
+    )
       .then(res => res.json())
       .then(data => console.log(data));
   }, [email]);
@@ -35,9 +37,12 @@ const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
 
         console.log('Deleted Successfully');
 
-        fetch(`http://localhost:5000/userBrands/${_id}`, {
-          method: 'DELETE',
-        })
+        fetch(
+          `https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands/${_id}`,
+          {
+            method: 'DELETE',
+          }
+        )
           .then(res => res.json())
           .then(data => {
             console.log(data);

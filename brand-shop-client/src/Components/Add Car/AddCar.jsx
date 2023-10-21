@@ -37,13 +37,16 @@ const AddCar = () => {
 
     console.log(addCars);
 
-    fetch('http://localhost:5000/userBrands', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(addCars),
-    })
+    fetch(
+      'https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands',
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(addCars),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -58,7 +61,7 @@ const AddCar = () => {
         }
       });
 
-    fetch('http://localhost:5000/cart', {
+    fetch('https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/cart', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

@@ -10,7 +10,7 @@ const CartCard = ({ product, usedProducts, setUsedProducts }) => {
   // const deleteToy = _id => {
   //   const isDelete = confirm('Are you sure you want to delete this?');
   //   if (isDelete) {
-  //     fetch(`http://localhost:5000/cart/${_id}`, {
+  //     fetch(`https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/cart/${_id}`, {
   //       method: 'DELETE',
   //     })
   //       // .then(res => res.json())
@@ -44,9 +44,12 @@ const CartCard = ({ product, usedProducts, setUsedProducts }) => {
 
         console.log('Deleted Successfully');
 
-        fetch(`http://localhost:5000/cart/${_id}`, {
-          method: 'DELETE',
-        })
+        fetch(
+          `https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/cart/${_id}`,
+          {
+            method: 'DELETE',
+          }
+        )
           .then(res => res.json())
           .then(data => {
             console.log(data);
