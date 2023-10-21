@@ -1,24 +1,24 @@
-import { useState, useContext } from "react";
-import { useLoaderData } from "react-router-dom";
-import Swal from "sweetalert2";
-import { AuthContext } from "../../Providers/AuthProvider";
+import { useState, useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const UpdateProduct = () => {
-  const [typeInput, setTypeInput] = useState("");
-  const [brandNameInput, setBrandNameInput] = useState("");
+  const [typeInput, setTypeInput] = useState('');
+  const [brandNameInput, setBrandNameInput] = useState('');
   const products = useLoaderData();
   const { _id, name, price, type, brandName, image } = products || {};
   const { user } = useContext(AuthContext);
 
-  const handleType = (e) => {
+  const handleType = e => {
     setTypeInput(e.target.value);
   };
 
-  const handleBrandName = (e) => {
+  const handleBrandName = e => {
     setBrandNameInput(e.target.value);
   };
 
-  const handleUpdateCar = (e) => {
+  const handleUpdateCar = e => {
     e.preventDefault();
 
     const formData = e.target;
@@ -39,21 +39,24 @@ const UpdateProduct = () => {
 
     console.log(UpdateCars);
 
-    fetch(`http://localhost:5000/updateItem/${_id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(UpdateCars),
-    })
-      .then((res) => res.json())
-      .then((data) => {
+    fetch(
+      `https://brand-shop-server-phju0kq6a-abrar-404.vercel.app/updateItem/${_id}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(UpdateCars),
+      }
+    )
+      .then(res => res.json())
+      .then(data => {
         console.log(data);
         if (data.matchedCount > 0) {
           Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Product Updated Successfully",
+            position: 'center',
+            icon: 'success',
+            title: 'Product Updated Successfully',
             showConfirmButton: false,
             timer: 1500,
           });

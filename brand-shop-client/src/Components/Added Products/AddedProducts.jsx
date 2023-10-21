@@ -1,14 +1,14 @@
-import { useState, useEffect, useContext } from "react";
-import { AuthContext } from "../../Providers/AuthProvider";
-import AddedCards from "./AddedCards";
+import { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
+import AddedCards from './AddedCards';
 const AddedProducts = () => {
   const { user } = useContext(AuthContext);
   const [usedProducts, setUsedProducts] = useState();
-  const url = `http://localhost:5000/userBrands?email=${user?.email}`;
+  const url = `https://brand-shop-server-phju0kq6a-abrar-404.vercel.app/userBrands?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
-      .then((res) => res.json())
-      .then((data) => setUsedProducts(data));
+      .then(res => res.json())
+      .then(data => setUsedProducts(data));
   }, [url]);
 
   return (
@@ -17,7 +17,7 @@ const AddedProducts = () => {
         <div>
           <div className="m-auto mt-20">
             <div className="grid grid-cols-1 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {usedProducts?.map((userbrands) => (
+              {usedProducts?.map(userbrands => (
                 <AddedCards
                   key={userbrands?._id}
                   userbrands={userbrands}

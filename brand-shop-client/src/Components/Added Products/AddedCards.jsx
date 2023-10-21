@@ -1,18 +1,10 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { FaOpencart } from 'react-icons/fa';
 
 const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
-  const {
-    _id,
-    name,
-    email,
-    price,
-    brandName,
-    type,
-    image,
-  } = userbrands || {};
-
+  const { _id, name, email, price, brandName, type, image } = userbrands || {};
 
   const handleDelete = _id => {
     Swal.fire({
@@ -29,9 +21,12 @@ const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
 
         console.log('Deleted Successfully');
 
-        fetch(`http://localhost:5000/userBrands/${_id}`, {
-          method: 'DELETE',
-        })
+        fetch(
+          `https://brand-shop-server-phju0kq6a-abrar-404.vercel.app/userBrands/${_id}`,
+          {
+            method: 'DELETE',
+          }
+        )
           .then(res => res.json())
           .then(data => {
             console.log(data);
@@ -52,20 +47,32 @@ const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
     <div>
       <div className="card bg-slate-800 bg-opacity-40 shadow-xl">
         <figure>
-          <img src={image} alt="" className="mt-10 rounded-lg" />
+          <img
+            src={image}
+            alt=""
+            className="mt-10 lg:w-96 lg:h-72 md:w-80 rounded-lg"
+          />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title text-white font-semibold">Name: {name}</h2>
-          <p className=" text-white font-medium">Price: ${price}</p>
-          <p className=" text-white font-medium">Type: {type}</p>
-          <p className=" text-white font-medium">
-            Brand Name: {brandName}
-          </p>
+        <div className="flex items-center justify-around mx-auto">
+          <div className="card-body">
+            <h2 className="card-title text-white font-semibold">
+              Name: {name}
+            </h2>
+            <p className=" text-white font-medium">Price: ${price}</p>
+            <p className=" text-white font-medium">Type: {type}</p>
+            <p className=" text-white font-medium">Brand Name: {brandName}</p>
+          </div>
+          <Link to={`/updatecar/${_id}`}>
+            <button className="btn btn-outline btn-secondary items-center">
+              Update<FaOpencart></FaOpencart>
+            </button>
+          </Link>
         </div>
-        <Link to={`/updatecar/${_id}`}>
-          <button className="btn btn-primary">Update</button>
-        </Link>
-        <button onClick={() => handleDelete(_id)} className="btn">
+
+        <button
+          onClick={() => handleDelete(_id)}
+          className="btn btn-outline btn-error"
+        >
           Delete
         </button>
       </div>

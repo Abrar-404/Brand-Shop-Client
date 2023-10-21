@@ -36,7 +36,7 @@ const ViewDetails = () => {
   };
 
   const addMyProducts = () => {
-    fetch('http://localhost:5000/cart', {
+    fetch('https://brand-shop-server-phju0kq6a-abrar-404.vercel.app/cart', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -59,8 +59,13 @@ const ViewDetails = () => {
           return response.json();
         } else if (response.status === 400) {
           // Product already exists, show an alert
-          return response.text().then(message => {
-            alert(`Product already exists in the cart: ${message}`);
+
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Product Already Added',
+            showConfirmButton: false,
+            timer: 1500,
           });
         }
       });
@@ -82,14 +87,20 @@ const ViewDetails = () => {
         <div className="card-body">
           <div className="">
             <div>
-              <h2 className="card-title flex justify-around text-white">
-                <div className="badge badge-secondary text-xs">
-                  {bring?.brandName1}
+              <div className="card-title flex justify-evenly text-white">
+                <div className="flex items-center gap-2">
+                  <h1>Name:</h1>
+                  <div className="badge badge-secondary text-xs">
+                    {bring?.brandName1}
+                  </div>
                 </div>
-                <div className="badge badge-secondary text-xs">
-                  {bring?.price}
+                <div className="flex items-center gap-2">
+                  <h1>Price: </h1>
+                  <div className="badge badge-secondary text-xs">
+                    {bring?.price}
+                  </div>
                 </div>
-              </h2>
+              </div>
             </div>
             <div>
               <h1 className="card-title mt-5 text-white text-xs md:text-sm lg:text-base">

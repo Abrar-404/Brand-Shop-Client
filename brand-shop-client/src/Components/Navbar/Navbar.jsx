@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { useState } from 'react';
 import '../Dark and Light/darkLight.css';
+import { BsCart3 } from 'react-icons/bs';
 
 const Navbar = () => {
   const { user, userLogOut } = useContext(AuthContext);
@@ -22,15 +23,15 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <li className="text-red-600">
+      <li className="text-white -mr-[2%]">
         <NavLink to="/">Home</NavLink>
       </li>
       {user ? null : (
         <>
-          <li className="text-red-600">
+          <li className="text-white">
             <NavLink to="/login">Login</NavLink>
           </li>
-          <li className="text-red-600">
+          <li className="text-white">
             <NavLink to="/register">Register</NavLink>
           </li>
         </>
@@ -38,13 +39,11 @@ const Navbar = () => {
 
       {user && (
         <>
-          <li className="text-red-600">
-            <NavLink to="/cart">My Cart</NavLink>
-          </li>
-          <li className="text-red-600">
+          <li className="text-white"></li>
+          <li className="text-white">
             <NavLink to="/addcar">Add Product</NavLink>
           </li>
-          <li className="text-red-600">
+          <li className="text-white">
             <NavLink to="/addedproducts">My Added Products</NavLink>
           </li>
         </>
@@ -86,6 +85,11 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
+          <div className="text-white mr-10 text-3xl">
+            <NavLink to="/cart">
+              <BsCart3></BsCart3>
+            </NavLink>
+          </div>
           {user?.email ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

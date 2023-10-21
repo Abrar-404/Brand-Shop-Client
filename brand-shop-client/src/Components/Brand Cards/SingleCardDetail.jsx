@@ -100,7 +100,7 @@ const SingleCardDetail = ({ brand }) => {
             </div>
             <div>
               <Link to={`/updatecar/${_id}`}>
-                <button className="btn btn-primary text-white">
+                <button className="btn btn-outline btn-secondary text-white">
                   Update{' '}
                   <span className="text-red-600">
                     <BsFillPenFill></BsFillPenFill>
@@ -111,7 +111,7 @@ const SingleCardDetail = ({ brand }) => {
           </div>
           <div className="flex justify-evenly mt-2">
             <Link to={`/viewdetails/${id}`}>
-              <button className="btn btn-primary">
+              <button className="btn btn-outline btn-success">
                 View Details <FaEye></FaEye>
               </button>
             </Link>
