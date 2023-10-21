@@ -35,16 +35,13 @@ const UpdateItem = () => {
 
     console.log(addCars);
 
-    fetch(
-      `https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands/${_id}`,
-      {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(addCars),
-      }
-    )
+    fetch(`http://localhost:5000/userBrands/${_id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(addCars),
+    })
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -52,9 +49,7 @@ const UpdateItem = () => {
   };
 
   useEffect(() => {
-    fetch(
-      `https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands/${_id}`
-    )
+    fetch(`http://localhost:5000/userBrands/${_id}`)
       .then(res => res.json())
       .then(data => setItem(data));
   });

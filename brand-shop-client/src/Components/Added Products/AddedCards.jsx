@@ -8,19 +8,11 @@ const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
     name,
     email,
     price,
-    selectedOption,
-    selectedOptionNew,
-    description,
+    brandName,
+    type,
     image,
   } = userbrands || {};
 
-  useEffect(() => {
-    fetch(
-      `https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands?email=${email}`
-    )
-      .then(res => res.json())
-      .then(data => console.log(data));
-  }, [email]);
 
   const handleDelete = _id => {
     Swal.fire({
@@ -37,12 +29,9 @@ const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
 
         console.log('Deleted Successfully');
 
-        fetch(
-          `https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands/${_id}`,
-          {
-            method: 'DELETE',
-          }
-        )
+        fetch(`http://localhost:5000/userBrands/${_id}`, {
+          method: 'DELETE',
+        })
           .then(res => res.json())
           .then(data => {
             console.log(data);
@@ -68,9 +57,9 @@ const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
         <div className="card-body">
           <h2 className="card-title text-white font-semibold">Name: {name}</h2>
           <p className=" text-white font-medium">Price: ${price}</p>
-          <p className=" text-white font-medium">Type: {selectedOption}</p>
+          <p className=" text-white font-medium">Type: {type}</p>
           <p className=" text-white font-medium">
-            Brand Name: {selectedOptionNew}
+            Brand Name: {brandName}
           </p>
         </div>
         <Link to={`/updatecar/${_id}`}>

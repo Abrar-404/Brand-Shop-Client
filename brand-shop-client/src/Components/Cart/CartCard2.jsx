@@ -1,6 +1,7 @@
+import { useState } from "react";
 import Swal from "sweetalert2";
 
-const CartCard = ({ product, usedProducts, setUsedProducts }) => {
+const CartCard2 = ({ product, customCard, setCustomCard }) => {
   const { _id } = product || {};
 
   const handleDelete = (_id) => {
@@ -18,7 +19,7 @@ const CartCard = ({ product, usedProducts, setUsedProducts }) => {
 
         console.log("Deleted Successfully");
 
-        fetch(`http://localhost:5000/cart/${_id}`, {
+        fetch(`http://localhost:5000/userBrands/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -28,10 +29,10 @@ const CartCard = ({ product, usedProducts, setUsedProducts }) => {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
 
               // eslint-disable-next-line react/prop-types
-              const remaining = usedProducts?.filter(
+              const remaining = customCard?.filter(
                 (products) => products?._id !== _id
               );
-              setUsedProducts(remaining);
+              setCustomCard(remaining);
             }
           });
       }
@@ -66,4 +67,4 @@ const CartCard = ({ product, usedProducts, setUsedProducts }) => {
   );
 };
 
-export default CartCard;
+export default CartCard2;

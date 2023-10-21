@@ -1,21 +1,21 @@
-import { useState, useContext } from 'react';
-import Swal from 'sweetalert2';
-import { AuthContext } from '../../Providers/AuthProvider';
+import { useState, useContext } from "react";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddCar = () => {
-  const [type, setType] = useState('');
-  const [brandName, setBrandName] = useState('');
+  const [type, setType] = useState("");
+  const [brandName, setBrandName] = useState("");
 
   const { user } = useContext(AuthContext);
-  const handleSelectChange = e => {
+  const handleSelectChange = (e) => {
     setType(e.target.value);
   };
 
-  const handleSelectNewChange = e => {
+  const handleSelectNewChange = (e) => {
     setBrandName(e.target.value);
   };
 
-  const handleAddCar = e => {
+  const handleAddCar = (e) => {
     e.preventDefault();
 
     const formData = e.target;
@@ -37,56 +37,24 @@ const AddCar = () => {
 
     console.log(addCars);
 
-    fetch(
-      'https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands',
-      {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(addCars),
-      }
-    )
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Product Added Successfully',
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      });
-
-    fetch('https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/cart', {
-      method: 'POST',
+    fetch("http://localhost:5000/userBrands", {
+      method: "POST",
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
       body: JSON.stringify(addCars),
     })
-      // .then(res => res.json())
-      .then(response => {
-        if (response.status === 200) {
-          // Product added successfully
-
-          // return response.json();
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
           Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Product Added Successfully',
+            position: "center",
+            icon: "success",
+            title: "Product Added Successfully",
             showConfirmButton: false,
             timer: 1500,
           });
-          return response.json();
-        } else if (response.status === 400) {
-          // Product already exists, show an alert
-          // return response.text().then(message => {
-          //   alert(`Product already exists in the cart: ${message}`);
-          // });
         }
       });
 

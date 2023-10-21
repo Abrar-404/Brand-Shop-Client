@@ -1,34 +1,32 @@
-import { useState, useContext } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import { AuthContext } from '../../Providers/AuthProvider';
+import { useState, useContext } from "react";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const UpdateProduct = () => {
-  const [selectedOption, setSelectedOption] = useState('');
-  const [selectedOptionNew, setSelectedOptionNew] = useState('');
+  const [typeInput, setTypeInput] = useState("");
+  const [brandNameInput, setBrandNameInput] = useState("");
   const products = useLoaderData();
-  const { _id, name, email, price, type, brandName, description, image } =
-    products || {};
+  const { _id, name, price, type, brandName, image } = products || {};
   const { user } = useContext(AuthContext);
 
-  const handleSelectChange = e => {
-    setSelectedOption(e.target.value);
+  const handleType = (e) => {
+    setTypeInput(e.target.value);
   };
 
-  const handleSelectNewChange = e => {
-    setSelectedOptionNew(e.target.value);
+  const handleBrandName = (e) => {
+    setBrandNameInput(e.target.value);
   };
 
-  const handleUpdateCar = e => {
+  const handleUpdateCar = (e) => {
     e.preventDefault();
 
     const formData = e.target;
 
     const email = user.email;
     const name = formData.name.value;
-    // const price = formData.price.value;
-    // const description = formData.description.value;
-    // const image = formData.image.value;
+    const price = formData.price.value;
+    const image = formData.image.value;
 
     const UpdateCars = {
       name,
@@ -36,30 +34,26 @@ const UpdateProduct = () => {
       price,
       type,
       brandName,
-      description,
       image,
     };
 
     console.log(UpdateCars);
 
-    fetch(
-      `https://brand-shop-server-j4ozlbyuj-abrar-404.vercel.app/userBrands/${_id}`,
-      {
-        method: 'PATCH',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(UpdateCars),
-      }
-    )
-      .then(res => res.json())
-      .then(data => {
+    fetch(`http://localhost:5000/updateItem/${_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(UpdateCars),
+    })
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.matchedCount > 0) {
           Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Product Added Successfully',
+            position: "center",
+            icon: "success",
+            title: "Product Updated Successfully",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -112,13 +106,14 @@ const UpdateProduct = () => {
               <div className="flex justify-between gap-6">
                 <div className="form-control w-full">
                   <label className="label">
-                    <span className="label-text text-white  font-bold">
+                    <span className="label-text text-white font-bold">
                       Type
                     </span>
                   </label>
                   <select
-                    onChange={handleSelectChange}
-                    value={selectedOption}
+                    onChange={handleType}
+                    value={typeInput}
+                    name="type"
                     className="select select-primary w-full"
                   >
                     <option value="" selected>
@@ -133,13 +128,14 @@ const UpdateProduct = () => {
                   </select>
 
                   <label className="label">
-                    <span className="label-text text-white  font-bold">
+                    <span className="label-text text-white font-bold">
                       Brand Name
                     </span>
                   </label>
                   <select
-                    onChange={handleSelectNewChange}
-                    value={selectedOptionNew}
+                    onChange={handleBrandName}
+                    value={brandNameInput}
+                    name="brandName"
                     className="select select-primary w-full"
                   >
                     <option value="" selected>
