@@ -1,6 +1,6 @@
 # Automotio
 
-## Client-Side Link: https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-Abrar-404/tree/main/brand-shop-client
+## Client-Side Link: [https://github.com/programming-hero-web-course-4/b8a10-brandshop-client-side-Abrar-404/tree/main/brand-shop-client](https://github.com/Abrar-404/Brand-Shop-Client/tree/main/brand-shop-client)
 ## Server-Side Link: [https://github.com/programming-hero-web-course-4/b8a10-brandshop-server-side-Abrar-404](https://github.com/Abrar-404/Brand-Shop-Server)
 ## Live Link: https://brand-shop-c499b.web.app/
 
