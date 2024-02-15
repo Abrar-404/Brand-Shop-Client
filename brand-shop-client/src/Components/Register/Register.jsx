@@ -31,7 +31,7 @@ const Register = () => {
         const savedUser = { email: loggedUser?.email, product: [] };
         console.log(savedUser);
 
-        fetch('http://localhost:5000/user', {
+        fetch('https://brand-shop-server-alpha.vercel.app/user', {
           method: 'POST',
           headers: {
             'content-type': 'application/json',
@@ -157,7 +157,7 @@ const Register = () => {
         const savedUser = { email: loggedUser?.email, product: [] };
         console.log(savedUser);
         naviGate('/login');
-        fetch('http://localhost:5000/user', {
+        fetch('https://brand-shop-server-alpha.vercel.app/user', {
           method: 'POST',
           headers: {
             'content-type': 'application/json',

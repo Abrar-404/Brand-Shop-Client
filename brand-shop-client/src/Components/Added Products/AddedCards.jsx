@@ -21,7 +21,7 @@ const AddedCards = ({ userbrands, usedProducts, setUsedProducts }) => {
 
         console.log('Deleted Successfully');
 
-        fetch(`http://localhost:5000/userBrands/${_id}`, {
+        fetch(`https://brand-shop-server-alpha.vercel.app/userBrands/${_id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())

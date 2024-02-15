@@ -29,7 +29,8 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/newBrand'),
+        loader: () =>
+          fetch('https://brand-shop-server-alpha.vercel.app/newBrand'),
       },
       {
         path: '/login',
@@ -50,7 +51,8 @@ const router = createBrowserRouter([
       {
         path: '/viewdetails/:_id',
         element: <ViewDetails></ViewDetails>,
-        loader: () => fetch(`http://localhost:5000/allProducts`),
+        loader: () =>
+          fetch(`https://brand-shop-server-alpha.vercel.app/allProducts`),
       },
       {
         path: '/seedetails/:brandName',
@@ -59,7 +61,8 @@ const router = createBrowserRouter([
             <DetailLoader></DetailLoader>
           </PrivateRoute>
         ),
-        loader: () => fetch('http://localhost:5000/allProducts'),
+        loader: () =>
+          fetch('https://brand-shop-server-alpha.vercel.app/allProducts'),
       },
       {
         path: '/addedproducts',
@@ -72,7 +75,8 @@ const router = createBrowserRouter([
             <CardLoader></CardLoader>
           </PrivateRoute>
         ),
-        loader: () => fetch('http://localhost:5000/allProducts'),
+        loader: () =>
+          fetch('https://brand-shop-server-alpha.vercel.app/allProducts'),
       },
       {
         path: '/addcar',
@@ -90,7 +94,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/userBrands/${params.id}`),
+          fetch(
+            `https://brand-shop-server-alpha.vercel.app/userBrands/${params.id}`
+          ),
       },
       {
         path: '/cart',

@@ -36,7 +36,7 @@ const ViewDetails = () => {
   };
 
   const addMyProducts = () => {
-    fetch('http://localhost:5000/cart', {
+    fetch('https://brand-shop-server-alpha.vercel.app/cart', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
