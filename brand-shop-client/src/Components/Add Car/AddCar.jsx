@@ -37,7 +37,7 @@ const AddCar = () => {
 
     console.log(addCars);
 
-    fetch('https://brand-shop-server-alpha.vercel.app/userBrands', {
+    fetch('http://localhost:5000/userBrands', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

@@ -18,7 +18,7 @@ const CartCard = ({ product, usedProducts, setUsedProducts }) => {
 
         console.log('Deleted Successfully');
 
-        fetch(`https://brand-shop-server-alpha.vercel.app/cart/${_id}`, {
+        fetch(`http://localhost:5000/cart/${_id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())

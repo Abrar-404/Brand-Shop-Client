@@ -31,7 +31,7 @@ const Login = () => {
       const savedUser = { email: loggedUser?.email, product: [] };
       console.log(savedUser);
 
-      fetch('https://brand-shop-server-alpha.vercel.app/user', {
+      fetch('http://localhost:5000/user', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',

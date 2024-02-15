@@ -35,7 +35,7 @@ const UpdateItem = () => {
 
     console.log(addCars);
 
-    fetch(`https://brand-shop-server-alpha.vercel.app/userBrands/${_id}`, {
+    fetch(`http://localhost:5000/userBrands/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -49,7 +49,7 @@ const UpdateItem = () => {
   };
 
   useEffect(() => {
-    fetch(`https://brand-shop-server-alpha.vercel.app/userBrands/${_id}`)
+    fetch(`http://localhost:5000/userBrands/${_id}`)
       .then(res => res.json())
       .then(data => setItem(data));
   });

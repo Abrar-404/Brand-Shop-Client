@@ -9,14 +9,14 @@ const Cart = () => {
   const { user } = useContext(AuthContext);
   const [usedProducts, setUsedProducts] = useState();
   const [customCard, setCustomCard] = useState();
-  const cart = `https://brand-shop-server-alpha.vercel.app/cart?email=${user?.email}`;
+  const cart = `http://localhost:5000/cart?email=${user?.email}`;
   useEffect(() => {
     fetch(cart)
       .then(res => res.json())
       .then(data => setUsedProducts(data));
   }, [cart]);
 
-  const url = `https://brand-shop-server-alpha.vercel.app/userBrands?email=${user?.email}`;
+  const url = `http://localhost:5000/userBrands?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then(res => res.json())

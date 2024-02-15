@@ -11,13 +11,12 @@ const MainLayout = () => {
   };
 
   return (
-    <div
-      style={backBg}
-      className="lg:max-w-[1400px] md:max-w-[768px] max-w-[425px] mx-auto"
-    >
-      <Navbar></Navbar>
-      <div className="">
-        <Outlet></Outlet>
+    <div style={backBg}>
+      <div>
+        <Navbar></Navbar>
+        <div className="">
+          <Outlet></Outlet>
+        </div>
       </div>
     </div>
   );
